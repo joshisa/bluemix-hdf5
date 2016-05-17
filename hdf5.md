@@ -28,10 +28,11 @@ print "hdf5Dir = " + hdf5Dir
 
 ```python
 # Temp Testing cell to help reset setup
-# Uncomment and Run to test modifications/tweaks to this notebook
+# Uncomment and Run if you want to test modifications/tweaks to this notebook and need to reset to an uninstalled state
 # !rm -rf $shareDir
 # !rm -rf $prefix/.local/lib/python2.7/site-packages/h5py
 # !rm -rf $prefix/.local/lib/python2.7/site-packages/h5py-2.6.0-py2.7.egg-info
+# !rm -rf *
 ```
 
 
@@ -48,16 +49,16 @@ print "hdf5Dir = " + hdf5Dir
 !wget https://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.17.tar.gz -O $hdf5Dir/hdf5-1.8.17.tar.gz
 ```
 
-    --2016-05-17 01:36:07--  https://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.17.tar.gz
+    --2016-05-17 16:53:51--  https://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.17.tar.gz
     Resolving www.hdfgroup.org (www.hdfgroup.org)... 50.28.50.143
     Connecting to www.hdfgroup.org (www.hdfgroup.org)|50.28.50.143|:443... connected.
     HTTP request sent, awaiting response... 200 OK
     Length: 12304149 (12M) [application/x-gzip]
     Saving to: '/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17.tar.gz'
     
-    100%[======================================>] 12,304,149  1.43MB/s   in 8.3s   
+    100%[======================================>] 12,304,149  2.22MB/s   in 5.4s   
     
-    2016-05-17 01:36:16 (1.41 MB/s) - '/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17.tar.gz' saved [12304149/12304149]
+    2016-05-17 16:53:56 (2.17 MB/s) - '/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17.tar.gz' saved [12304149/12304149]
     
 
 
@@ -80,8 +81,8 @@ print hdf5SrcDir
 ```
 
     total 2376
-    drwxr-xr-x 14 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 01:36 .
-    drwxr-xr-x  4 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 01:36 ..
+    drwxr-xr-x 14 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 16:54 .
+    drwxr-xr-x  4 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 16:53 ..
     -rw-r--r--  1 s1a2-472d95bcebf7db-bf066087ecf5 users     683 Apr 26 07:44 ACKNOWLEDGMENTS
     -rw-r--r--  1 s1a2-472d95bcebf7db-bf066087ecf5 users    5701 Apr 26 07:44 CMakeFilters.cmake
     -rw-r--r--  1 s1a2-472d95bcebf7db-bf066087ecf5 users   24952 Apr 26 07:44 CMakeInstallation.cmake
@@ -97,28 +98,26 @@ print hdf5SrcDir
     -rw-r--r--  1 s1a2-472d95bcebf7db-bf066087ecf5 users    1089 Apr 26 07:44 UserMacros.cmake
     -rw-r--r--  1 s1a2-472d95bcebf7db-bf066087ecf5 users  352306 May 10 16:24 aclocal.m4
     -rw-r--r--  1 s1a2-472d95bcebf7db-bf066087ecf5 users    4014 Apr 26 07:44 acsite.m4
-    drwxr-xr-x  2 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 01:36 bin
-    drwxr-xr-x  5 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 01:36 c++
-    drwxr-xr-x  5 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 01:36 config
+    drwxr-xr-x  2 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 16:53 bin
+    drwxr-xr-x  5 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 16:54 c++
+    drwxr-xr-x  5 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 16:54 config
     -rwxr-xr-x  1 s1a2-472d95bcebf7db-bf066087ecf5 users 1034850 May 10 16:24 configure
     -rw-r--r--  1 s1a2-472d95bcebf7db-bf066087ecf5 users  105916 May 10 16:24 configure.ac
-    drwxr-xr-x  2 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 01:36 examples
-    drwxr-xr-x  6 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 01:36 fortran
-    drwxr-xr-x  8 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 01:36 hl
-    drwxr-xr-x  2 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 01:36 m4
-    drwxr-xr-x  2 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 01:36 release_docs
-    drwxr-xr-x  2 s1a2-472d95bcebf7db-bf066087ecf5 users   16384 May 17 01:36 src
-    drwxr-xr-x  3 s1a2-472d95bcebf7db-bf066087ecf5 users    8192 May 17 01:36 test
-    drwxr-xr-x  2 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 01:36 testpar
-    drwxr-xr-x 14 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 01:36 tools
+    drwxr-xr-x  2 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 16:54 examples
+    drwxr-xr-x  6 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 16:54 fortran
+    drwxr-xr-x  8 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 16:54 hl
+    drwxr-xr-x  2 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 16:53 m4
+    drwxr-xr-x  2 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 16:54 release_docs
+    drwxr-xr-x  2 s1a2-472d95bcebf7db-bf066087ecf5 users   16384 May 17 16:54 src
+    drwxr-xr-x  3 s1a2-472d95bcebf7db-bf066087ecf5 users    8192 May 17 16:54 test
+    drwxr-xr-x  2 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 16:54 testpar
+    drwxr-xr-x 14 s1a2-472d95bcebf7db-bf066087ecf5 users    4096 May 17 16:54 tools
 
 
 
 ```python
-# WARNING:  This cell will take a while ... ~10-12 mins with high CPU on the browser.  
-# Your browser may even become unresponsive for a period of time.  Just be patient until the cell execution is complete.
-# It is basically configuring and compiling the native hdf5 libs that are required by H5py 
-!$hdf5SrcDir/configure --prefix=$hdf5Dir/hdf5 && make -w -Wno-cpp && make -w -Wno-cpp install
+# Setup Configuration Info
+!$hdf5SrcDir/configure --prefix=$hdf5Dir/hdf5
 ```
 
     checking for a BSD-compatible install... /bin/install -c
@@ -493,10 +492,8 @@ print hdf5SrcDir
     config.status: creating hl/fortran/examples/Makefile
     config.status: creating hl/fortran/examples/run-hlfortran-ex.sh
     config.status: creating src/H5config.h
-    config.status: src/H5config.h is unchanged
     config.status: executing pubconf commands
     creating src/H5pubconf.h
-    src/H5pubconf.h is unchanged
     Post process src/libhdf5.settings
     config.status: executing depfiles commands
     config.status: executing libtool commands
@@ -506,7 +503,7 @@ print hdf5SrcDir
     General Information:
     -------------------
     		   HDF5 Version: 1.8.17
-    		  Configured on: Tue May 17 01:37:09 CDT 2016
+    		  Configured on: Tue May 17 16:54:15 CDT 2016
     		  Configured by: s1a2-472d95bcebf7db-bf066087ecf5@yp-spark-dal09-env5-0024
     		 Configure mode: production
     		    Host system: x86_64-unknown-linux-gnu
@@ -559,1377 +556,964 @@ print hdf5SrcDir
              Function Stack Tracing: no
           Strict File Format Checks: no
        Optimization Instrumentation: no
+
+
+
+```python
+# Let's make the build and install process as quiet as possible.  Removing all of the H5_CFFLAGS compiler warning settings
+!rm config.status.new 2>/dev/null
+!cat config.status | sed -n '1h;1!H;${;g;s/"\-std.*O3"/"\-std=c99"/g;p;}' | sed 's/&amp;/\&/g' | sed 's/&lt;/\</g' | sed 's/&gt;/\>/g' > config.status.new
+!rm config.status
+!mv config.status.new config.status
+```
+
+
+```python
+# WARNING:  This cell will take a while ... ~10-12 mins with high CPU on the browser.  
+# Your browser may even become unresponsive for a period of time.  Just be patient until the cell execution is complete.  Go grab something to drink.
+# It is basically configuring and compiling the native hdf5 libs that are required by H5py 
+# NOTE:  You may need to refresh your browser after this cell completes.  Carefully monitor the kernel indicator in the upper right as well.
+#        The good news is that this is a one time operation. After the native libs are built, they will be available to all existing and new notebooks within this Spark Instance.
+!make -w && make -w install
+```
+
+    make: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work'
+     /bin/sh ./config.status
+    config.status: creating src/libhdf5.settings
+    config.status: creating Makefile
+    config.status: creating src/Makefile
+    config.status: creating test/Makefile
+    config.status: creating test/testcheck_version.sh
+    config.status: creating test/testerror.sh
+    config.status: creating test/H5srcdir_str.h
+    config.status: creating test/testlibinfo.sh
+    config.status: creating test/testlinks_env.sh
+    config.status: creating test/test_plugin.sh
+    config.status: creating testpar/Makefile
+    config.status: creating tools/Makefile
+    config.status: creating tools/h5dump/Makefile
+    config.status: creating tools/h5dump/testh5dump.sh
+    config.status: creating tools/h5dump/testh5dumppbits.sh
+    config.status: creating tools/h5dump/testh5dumpxml.sh
+    config.status: creating tools/h5ls/testh5ls.sh
+    config.status: creating tools/h5import/Makefile
+    config.status: creating tools/h5import/h5importtestutil.sh
+    config.status: creating tools/h5diff/Makefile
+    config.status: creating tools/h5diff/testh5diff.sh
+    config.status: creating tools/h5diff/testph5diff.sh
+    config.status: creating tools/h5jam/Makefile
+    config.status: creating tools/h5jam/testh5jam.sh
+    config.status: creating tools/h5repack/Makefile
+    config.status: creating tools/h5repack/h5repack.sh
+    config.status: creating tools/h5repack/h5repack_plugin.sh
+    config.status: creating tools/h5ls/Makefile
+    config.status: creating tools/h5copy/Makefile
+    config.status: creating tools/h5copy/testh5copy.sh
+    config.status: creating tools/lib/Makefile
+    config.status: creating tools/misc/Makefile
+    config.status: creating tools/misc/h5cc
+    config.status: creating tools/misc/testh5mkgrp.sh
+    config.status: creating tools/misc/testh5repart.sh
+    config.status: creating tools/h5stat/testh5stat.sh
+    config.status: creating tools/h5stat/Makefile
+    config.status: creating tools/perform/Makefile
+    config.status: creating examples/Makefile
+    config.status: creating examples/run-c-ex.sh
+    config.status: creating examples/testh5cc.sh
+    config.status: creating c++/Makefile
+    config.status: creating c++/src/Makefile
+    config.status: creating c++/src/h5c++
+    config.status: creating c++/test/Makefile
+    config.status: creating c++/test/H5srcdir_str.h
+    config.status: creating c++/examples/Makefile
+    config.status: creating c++/examples/run-c++-ex.sh
+    config.status: creating c++/examples/testh5c++.sh
+    config.status: creating fortran/Makefile
+    config.status: creating fortran/src/h5fc
+    config.status: creating fortran/src/Makefile
+    config.status: creating fortran/test/Makefile
+    config.status: creating fortran/testpar/Makefile
+    config.status: creating fortran/examples/Makefile
+    config.status: creating fortran/examples/run-fortran-ex.sh
+    config.status: creating fortran/examples/testh5fc.sh
+    config.status: creating hl/Makefile
+    config.status: creating hl/src/Makefile
+    config.status: creating hl/test/Makefile
+    config.status: creating hl/test/H5srcdir_str.h
+    config.status: creating hl/tools/Makefile
+    config.status: creating hl/tools/gif2h5/Makefile
+    config.status: creating hl/tools/gif2h5/h52giftest.sh
+    config.status: creating hl/examples/Makefile
+    config.status: creating hl/examples/run-hlc-ex.sh
+    config.status: creating hl/c++/Makefile
+    config.status: creating hl/c++/src/Makefile
+    config.status: creating hl/c++/test/Makefile
+    config.status: creating hl/c++/examples/Makefile
+    config.status: creating hl/c++/examples/run-hlc++-ex.sh
+    config.status: creating hl/fortran/Makefile
+    config.status: creating hl/fortran/src/Makefile
+    config.status: creating hl/fortran/test/Makefile
+    config.status: creating hl/fortran/examples/Makefile
+    config.status: creating hl/fortran/examples/run-hlfortran-ex.sh
+    config.status: creating src/H5config.h
+    config.status: src/H5config.h is unchanged
+    config.status: executing pubconf commands
+    creating src/H5pubconf.h
+    src/H5pubconf.h is unchanged
+    Post process src/libhdf5.settings
+    config.status: executing depfiles commands
+    config.status: executing libtool commands
+    make: Leaving directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work'
     make: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work'
     Making all in src
     make[1]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/src'
     make  all-am
     make[2]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/src'
+      CC       H5.lo
+      CC       H5checksum.lo
+      CC       H5dbg.lo
+      CC       H5system.lo
+      CC       H5timer.lo
+      CC       H5trace.lo
+      CC       H5A.lo
+      CC       H5Abtree2.lo
+      CC       H5Adense.lo
+      CC       H5Adeprec.lo
+      CC       H5Aint.lo
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Aint.c:[m[K In function '[01m[KH5A_create[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Aint.c:202:5:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5T_copy[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         if(NULL == (attr->shared->dt = H5T_copy(type, H5T_COPY_ALL)))
+    [01;32m[K     ^[m[K
+    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Oprivate.h:41:0[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Aprivate.h:27[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Apkg.h:39[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Aint.c:39[m[K:
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tprivate.h:109:15:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5T_t *[m[K' but argument is of type '[01m[Kconst struct H5T_t *[m[K'
+     H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
+    [01;32m[K               ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Aint.c:[m[K In function '[01m[KH5A_write[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Aint.c:529:13:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5T_copy[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+                 if((src_id = H5I_register(H5I_DATATYPE, H5T_copy(mem_type, H5T_COPY_ALL), FALSE)) < 0 ||
+    [01;32m[K             ^[m[K
+    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Oprivate.h:41:0[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Aprivate.h:27[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Apkg.h:39[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Aint.c:39[m[K:
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tprivate.h:109:15:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5T_t *[m[K' but argument is of type '[01m[Kconst struct H5T_t *[m[K'
+     H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
+    [01;32m[K               ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Aint.c:[m[K In function '[01m[KH5A_read[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Aint.c:646:25:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5T_copy[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+                             (dst_id = H5I_register(H5I_DATATYPE, H5T_copy(mem_type, H5T_COPY_ALL), FALSE)) < 0)
+    [01;32m[K                         ^[m[K
+    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Oprivate.h:41:0[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Aprivate.h:27[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Apkg.h:39[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Aint.c:39[m[K:
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tprivate.h:109:15:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5T_t *[m[K' but argument is of type '[01m[Kconst struct H5T_t *[m[K'
+     H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
+    [01;32m[K               ^[m[K
+      CC       H5Atest.lo
+      CC       H5AC.lo
+      CC       H5B.lo
+      CC       H5Bcache.lo
+      CC       H5Bdbg.lo
+      CC       H5B2.lo
+      CC       H5B2cache.lo
+      CC       H5B2dbg.lo
+      CC       H5B2hdr.lo
+      CC       H5B2int.lo
+      CC       H5B2stat.lo
+      CC       H5B2test.lo
+      CC       H5C.lo
+      CC       H5CS.lo
+      CC       H5D.lo
+      CC       H5Dbtree.lo
+      CC       H5Dchunk.lo
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dchunk.c:[m[K In function '[01m[KH5D__chunk_copy[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dchunk.c:4831:9:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5T_copy[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+             if(NULL == (dt_mem = H5T_copy(dt_src, H5T_COPY_TRANSIENT)))
+    [01;32m[K         ^[m[K
+    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Oprivate.h:41:0[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dprivate.h:27[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dpkg.h:32[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dchunk.c:57[m[K:
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tprivate.h:109:15:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5T_t *[m[K' but argument is of type '[01m[Kconst struct H5T_t *[m[K'
+     H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
+    [01;32m[K               ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dchunk.c:4839:9:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5T_copy[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+             if(NULL == (dt_dst = H5T_copy(dt_src, H5T_COPY_TRANSIENT)))
+    [01;32m[K         ^[m[K
+    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Oprivate.h:41:0[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dprivate.h:27[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dpkg.h:32[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dchunk.c:57[m[K:
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tprivate.h:109:15:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5T_t *[m[K' but argument is of type '[01m[Kconst struct H5T_t *[m[K'
+     H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
+    [01;32m[K               ^[m[K
+      CC       H5Dcompact.lo
+      CC       H5Dcontig.lo
+      CC       H5Ddbg.lo
+      CC       H5Ddeprec.lo
+      CC       H5Defl.lo
+      CC       H5Dfill.lo
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dfill.c:[m[K In function '[01m[KH5D__fill[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dfill.c:234:13:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5T_copy[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+                 if((src_id = H5I_register(H5I_DATATYPE, H5T_copy(fill_type, H5T_COPY_ALL), FALSE)) < 0)
+    [01;32m[K             ^[m[K
+    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Oprivate.h:41:0[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dprivate.h:27[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dpkg.h:32[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dfill.c:37[m[K:
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tprivate.h:109:15:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5T_t *[m[K' but argument is of type '[01m[Kconst struct H5T_t *[m[K'
+     H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
+    [01;32m[K               ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dfill.c:237:13:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5T_copy[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+                 if((dst_id = H5I_register(H5I_DATATYPE, H5T_copy(buf_type, H5T_COPY_ALL), FALSE)) < 0)
+    [01;32m[K             ^[m[K
+    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Oprivate.h:41:0[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dprivate.h:27[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dpkg.h:32[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dfill.c:37[m[K:
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tprivate.h:109:15:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5T_t *[m[K' but argument is of type '[01m[Kconst struct H5T_t *[m[K'
+     H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
+    [01;32m[K               ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dfill.c:[m[K In function '[01m[KH5D__fill_init[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dfill.c:407:13:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5T_copy[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+                 if(NULL == (fb_info->mem_type = H5T_copy(dset_type, H5T_COPY_REOPEN)))
+    [01;32m[K             ^[m[K
+    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Oprivate.h:41:0[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dprivate.h:27[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dpkg.h:32[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dfill.c:37[m[K:
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tprivate.h:109:15:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5T_t *[m[K' but argument is of type '[01m[Kconst struct H5T_t *[m[K'
+     H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
+    [01;32m[K               ^[m[K
+      CC       H5Dint.lo
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dint.c:[m[K In function '[01m[KH5D__init_type[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dint.c:638:9:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5T_copy[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+             if((dset->shared->type = H5T_copy(type, H5T_COPY_ALL)) == NULL)
+    [01;32m[K         ^[m[K
+    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Oprivate.h:41:0[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dprivate.h:27[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dpkg.h:32[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dint.c:30[m[K:
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tprivate.h:109:15:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5T_t *[m[K' but argument is of type '[01m[Kconst struct H5T_t *[m[K'
+     H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
+    [01;32m[K               ^[m[K
+      CC       H5Dio.lo
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dio.c:[m[K In function '[01m[KH5D__read[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dio.c:424:5:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function '[01m[KH5T_patch_vlen_file[m[K' [-Wimplicit-function-declaration]
+         H5T_patch_vlen_file(dataset->shared->type, dataset->oloc.file);
+    [01;32m[K     ^[m[K
+      CC       H5Dlayout.lo
+      CC       H5Dmpio.lo
+      CC       H5Doh.lo
+      CC       H5Dscatgath.lo
+      CC       H5Dselect.lo
+      CC       H5Dtest.lo
+      CC       H5E.lo
+      CC       H5Edeprec.lo
+      CC       H5Eint.lo
+      CC       H5F.lo
+      CC       H5Fint.lo
+      CC       H5Faccum.lo
+      CC       H5Fcwfs.lo
+      CC       H5Fdbg.lo
+      CC       H5Fefc.lo
+      CC       H5Ffake.lo
+      CC       H5Fio.lo
+      CC       H5Fmount.lo
+      CC       H5Fmpi.lo
+      CC       H5Fquery.lo
+      CC       H5Fsfile.lo
+      CC       H5Fsuper.lo
+      CC       H5Fsuper_cache.lo
+      CC       H5Ftest.lo
+      CC       H5FD.lo
+      CC       H5FDcore.lo
+      CC       H5FDdirect.lo
+      CC       H5FDfamily.lo
+      CC       H5FDint.lo
+      CC       H5FDlog.lo
+      CC       H5FDmpi.lo
+      CC       H5FDmpio.lo
+      CC       H5FDmulti.lo
+      CC       H5FDsec2.lo
+      CC       H5FDspace.lo
+      CC       H5FDstdio.lo
+      CC       H5FL.lo
+      CC       H5FO.lo
+      CC       H5FS.lo
+      CC       H5FScache.lo
+      CC       H5FSdbg.lo
+      CC       H5FSsection.lo
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5FSsection.c:[m[K In function '[01m[KH5FS_sect_try_shrink_eoa[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5FSsection.c:2338:5:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5FS_sinfo_lock[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         if(H5FS_sinfo_lock(f, dxpl_id, fspace, H5AC_WRITE) < 0)
+    [01;32m[K     ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5FSsection.c:207:1:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5F_t *[m[K' but argument is of type '[01m[Kconst struct H5F_t *[m[K'
+     H5FS_sinfo_lock(H5F_t *f, hid_t dxpl_id, H5FS_t *fspace, H5AC_protect_t accmode)
+    [01;32m[K ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5FSsection.c:2338:5:[m[K [01;35m[Kwarning: [m[Kpassing argument 3 of '[01m[KH5FS_sinfo_lock[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         if(H5FS_sinfo_lock(f, dxpl_id, fspace, H5AC_WRITE) < 0)
+    [01;32m[K     ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5FSsection.c:207:1:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5FS_t *[m[K' but argument is of type '[01m[Kconst struct H5FS_t *[m[K'
+     H5FS_sinfo_lock(H5F_t *f, hid_t dxpl_id, H5FS_t *fspace, H5AC_protect_t accmode)
+    [01;32m[K ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5FSsection.c:2362:7:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5FS_sect_remove_real[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+           if(H5FS_sect_remove_real(fspace, tmp_sect) < 0)
+    [01;32m[K       ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5FSsection.c:859:1:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5FS_t *[m[K' but argument is of type '[01m[Kconst struct H5FS_t *[m[K'
+     H5FS_sect_remove_real(H5FS_t *fspace, H5FS_section_info_t *sect)
+    [01;32m[K ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5FSsection.c:2376:5:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5FS_sinfo_unlock[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         if(sinfo_valid && H5FS_sinfo_unlock(f, dxpl_id, fspace, section_removed) < 0)
+    [01;32m[K     ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5FSsection.c:313:1:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5F_t *[m[K' but argument is of type '[01m[Kconst struct H5F_t *[m[K'
+     H5FS_sinfo_unlock(H5F_t *f, hid_t dxpl_id, H5FS_t *fspace, hbool_t modified)
+    [01;32m[K ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5FSsection.c:2376:5:[m[K [01;35m[Kwarning: [m[Kpassing argument 3 of '[01m[KH5FS_sinfo_unlock[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         if(sinfo_valid && H5FS_sinfo_unlock(f, dxpl_id, fspace, section_removed) < 0)
+    [01;32m[K     ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5FSsection.c:313:1:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5FS_t *[m[K' but argument is of type '[01m[Kconst struct H5FS_t *[m[K'
+     H5FS_sinfo_unlock(H5F_t *f, hid_t dxpl_id, H5FS_t *fspace, hbool_t modified)
+    [01;32m[K ^[m[K
+      CC       H5FSstat.lo
+      CC       H5FStest.lo
+      CC       H5G.lo
+      CC       H5Gbtree2.lo
+      CC       H5Gcache.lo
+      CC       H5Gcompact.lo
+      CC       H5Gdense.lo
+      CC       H5Gdeprec.lo
+      CC       H5Gent.lo
+      CC       H5Gint.lo
+      CC       H5Glink.lo
+      CC       H5Gloc.lo
+      CC       H5Gname.lo
+      CC       H5Gnode.lo
+      CC       H5Gobj.lo
+      CC       H5Goh.lo
+      CC       H5Groot.lo
+      CC       H5Gstab.lo
+      CC       H5Gtest.lo
+      CC       H5Gtraverse.lo
+      CC       H5HF.lo
+      CC       H5HFbtree2.lo
+      CC       H5HFcache.lo
+      CC       H5HFdbg.lo
+      CC       H5HFdblock.lo
+      CC       H5HFdtable.lo
+      CC       H5HFhdr.lo
+      CC       H5HFhuge.lo
+      CC       H5HFiblock.lo
+      CC       H5HFiter.lo
+      CC       H5HFman.lo
+      CC       H5HFsection.lo
+      CC       H5HFspace.lo
+      CC       H5HFstat.lo
+      CC       H5HFtest.lo
+      CC       H5HFtiny.lo
+      CC       H5HG.lo
+      CC       H5HGcache.lo
+      CC       H5HGdbg.lo
+      CC       H5HGquery.lo
+      CC       H5HL.lo
+      CC       H5HLcache.lo
+      CC       H5HLdbg.lo
+      CC       H5HLint.lo
+      CC       H5HP.lo
+      CC       H5I.lo
+      CC       H5Itest.lo
+      CC       H5L.lo
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5L.c:[m[K In function '[01m[KH5L_move_cb[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5L.c:2580:13:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5RS_wrap[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+                 dst_name_r = H5RS_wrap(udata->dst_name);
+    [01;32m[K             ^[m[K
+    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Gprivate.h:37:0[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tprivate.h:30[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Oprivate.h:41[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dprivate.h:27[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5L.c:30[m[K:
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5RSprivate.h:49:20:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kchar *[m[K' but argument is of type '[01m[Kconst char *[m[K'
+     H5_DLL H5RS_str_t *H5RS_wrap(char *s);
+    [01;32m[K                    ^[m[K
+      CC       H5Lexternal.lo
+      CC       H5make_libsettings.o
+      CCLD     H5make_libsettings
     LD_LIBRARY_PATH="$LD_LIBRARY_PATH`echo  |                  \
     	sed -e 's/-L/:/g' -e 's/ //g'`"                               \
      ./H5make_libsettings > H5lib_settings.c  ||                               \
         (test $HDF5_Make_Ignore && echo "*** Error ignored") ||          \
         (rm -f H5lib_settings.c ; exit 1)
       CC       H5lib_settings.lo
-    [01m[KH5lib_settings.c:34:6:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[KH5libhdf5_settings[m[K' is 3065 bytes [-Wlarger-than=]
-     char H5libhdf5_settings[]=
-    [01;32m[K      ^[m[K
+      CC       H5MF.lo
+      CC       H5MFaggr.lo
+      CC       H5MFdbg.lo
+      CC       H5MFsection.lo
+      CC       H5MM.lo
+      CC       H5MP.lo
+      CC       H5MPtest.lo
+      CC       H5O.lo
+      CC       H5Oainfo.lo
+      CC       H5Oalloc.lo
+      CC       H5Oattr.lo
+      CC       H5Oattribute.lo
+      CC       H5Obogus.lo
+      CC       H5Obtreek.lo
+      CC       H5Ocache.lo
+      CC       H5Ochunk.lo
+      CC       H5Ocont.lo
+      CC       H5Ocopy.lo
+      CC       H5Odbg.lo
+      CC       H5Odrvinfo.lo
+      CC       H5Odtype.lo
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Odtype.c:[m[K In function '[01m[KH5O_dtype_copy[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Odtype.c:1188:5:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5T_copy[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         if(NULL == (dst = H5T_copy(src, H5T_COPY_ALL)))
+    [01;32m[K     ^[m[K
+    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Oprivate.h:41:0[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dprivate.h:27[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Odtype.c:20[m[K:
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tprivate.h:109:15:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5T_t *[m[K' but argument is of type '[01m[Kconst struct H5T_t *[m[K'
+     H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
+    [01;32m[K               ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Odtype.c:[m[K In function '[01m[KH5O_dtype_pre_copy_file[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Odtype.c:1533:9:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5T_copy[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+             if(NULL == (udata->src_dtype = H5T_copy(dt_src, H5T_COPY_TRANSIENT)))
+    [01;32m[K         ^[m[K
+    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Oprivate.h:41:0[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dprivate.h:27[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Odtype.c:20[m[K:
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tprivate.h:109:15:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5T_t *[m[K' but argument is of type '[01m[Kconst struct H5T_t *[m[K'
+     H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
+    [01;32m[K               ^[m[K
+      CC       H5Oefl.lo
+      CC       H5Ofill.lo
+      CC       H5Oginfo.lo
+      CC       H5Olayout.lo
+      CC       H5Olinfo.lo
+      CC       H5Olink.lo
+      CC       H5Omessage.lo
+      CC       H5Omtime.lo
+      CC       H5Oname.lo
+      CC       H5Onull.lo
+      CC       H5Opline.lo
+      CC       H5Orefcount.lo
+      CC       H5Osdspace.lo
+      CC       H5Oshared.lo
+      CC       H5Ostab.lo
+      CC       H5Oshmesg.lo
+      CC       H5Otest.lo
+      CC       H5Ounknown.lo
+      CC       H5P.lo
+      CC       H5Pacpl.lo
+      CC       H5Pdapl.lo
+      CC       H5Pdcpl.lo
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Pdcpl.c:[m[K In function '[01m[KH5P_get_fill_value[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Pdcpl.c:1565:5:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5T_copy[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         if((dst_id = H5I_register(H5I_DATATYPE, H5T_copy(type, H5T_COPY_TRANSIENT), FALSE)) < 0)
+    [01;32m[K     ^[m[K
+    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Oprivate.h:41:0[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dprivate.h:27[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Pdcpl.c:39[m[K:
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tprivate.h:109:15:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5T_t *[m[K' but argument is of type '[01m[Kconst struct H5T_t *[m[K'
+     H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
+    [01;32m[K               ^[m[K
+      CC       H5Pdeprec.lo
+      CC       H5Pdxpl.lo
+      CC       H5Pfapl.lo
+      CC       H5Pfcpl.lo
+      CC       H5Pfmpl.lo
+      CC       H5Pgcpl.lo
+      CC       H5Pint.lo
+      CC       H5Plapl.lo
+      CC       H5Plcpl.lo
+      CC       H5Pocpl.lo
+      CC       H5Pocpypl.lo
+      CC       H5Pstrcpl.lo
+      CC       H5Ptest.lo
+      CC       H5PL.lo
+      CC       H5R.lo
+      CC       H5Rdeprec.lo
+      CC       H5RC.lo
+      CC       H5RS.lo
+      CC       H5S.lo
+      CC       H5Sall.lo
+      CC       H5Sdbg.lo
+      CC       H5Shyper.lo
+      CC       H5Smpio.lo
+      CC       H5Snone.lo
+      CC       H5Spoint.lo
+      CC       H5Sselect.lo
+      CC       H5Stest.lo
+      CC       H5SL.lo
+      CC       H5SM.lo
+      CC       H5SMbtree2.lo
+      CC       H5SMcache.lo
+      CC       H5SMmessage.lo
+      CC       H5SMtest.lo
+      CC       H5ST.lo
+      CC       H5T.lo
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5T.c:[m[K In function '[01m[KH5T_path_find[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5T.c:4485:2:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5T_copy[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+      if(NULL == (path->src = H5T_copy(src, H5T_COPY_ALL)))
+    [01;32m[K  ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5T.c:3115:1:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5T_t *[m[K' but argument is of type '[01m[Kconst struct H5T_t *[m[K'
+     H5T_copy(H5T_t *old_dt, H5T_copy_t method)
+    [01;32m[K ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5T.c:4487:9:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5T_copy[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+             if(NULL == (path->dst = H5T_copy(dst, H5T_COPY_ALL)))
+    [01;32m[K         ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5T.c:3115:1:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5T_t *[m[K' but argument is of type '[01m[Kconst struct H5T_t *[m[K'
+     H5T_copy(H5T_t *old_dt, H5T_copy_t method)
+    [01;32m[K ^[m[K
+      CC       H5Tarray.lo
+      CC       H5Tbit.lo
+      CC       H5Tcommit.lo
+      CC       H5Tcompound.lo
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tcompound.c:[m[K In function '[01m[KH5T__insert[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tcompound.c:484:5:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5T_copy[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         parent->shared->u.compnd.memb[idx].type = H5T_copy(member, H5T_COPY_ALL);
+    [01;32m[K     ^[m[K
+    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tpkg.h:39:0[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tcompound.c:38[m[K:
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tprivate.h:109:15:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5T_t *[m[K' but argument is of type '[01m[Kconst struct H5T_t *[m[K'
+     H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
+    [01;32m[K               ^[m[K
+      CC       H5Tconv.lo
+      CC       H5Tcset.lo
+      CC       H5Tdbg.lo
+      CC       H5Tdeprec.lo
+      CC       H5Tenum.lo
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tenum.c:[m[K In function '[01m[KH5T__enum_create[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tenum.c:136:5:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5T_copy[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         ret_value->shared->parent = H5T_copy(parent, H5T_COPY_ALL);
+    [01;32m[K     ^[m[K
+    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tpkg.h:39:0[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tenum.c:31[m[K:
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tprivate.h:109:15:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5T_t *[m[K' but argument is of type '[01m[Kconst struct H5T_t *[m[K'
+     H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
+    [01;32m[K               ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tenum.c:[m[K In function '[01m[KH5T_enum_nameof[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tenum.c:437:5:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5T_copy[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         if(NULL == (copied_dt = H5T_copy(dt, H5T_COPY_ALL)))
+    [01;32m[K     ^[m[K
+    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tpkg.h:39:0[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tenum.c:31[m[K:
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tprivate.h:109:15:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5T_t *[m[K' but argument is of type '[01m[Kconst struct H5T_t *[m[K'
+     H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
+    [01;32m[K               ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tenum.c:[m[K In function '[01m[KH5T_enum_valueof[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tenum.c:576:5:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5T_copy[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         if (NULL==(copied_dt=H5T_copy(dt, H5T_COPY_ALL)))
+    [01;32m[K     ^[m[K
+    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tpkg.h:39:0[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tenum.c:31[m[K:
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tprivate.h:109:15:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5T_t *[m[K' but argument is of type '[01m[Kconst struct H5T_t *[m[K'
+     H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
+    [01;32m[K               ^[m[K
+      CC       H5Tfields.lo
+      CC       H5Tfixed.lo
+      CC       H5Tfloat.lo
+      CC       H5detect.o
+      CCLD     H5detect
+    LD_LIBRARY_PATH="$LD_LIBRARY_PATH`echo  |                  \
+    	sed -e 's/-L/:/g' -e 's/ //g'`"                               \
+     ./H5detect > H5Tinit.c  ||                               \
+        (test $HDF5_Make_Ignore && echo "*** Error ignored") ||          \
+        (rm -f H5Tinit.c ; exit 1)
+      CC       H5Tinit.lo
+      CC       H5Tnative.lo
+      CC       H5Toffset.lo
+      CC       H5Toh.lo
+      CC       H5Topaque.lo
+      CC       H5Torder.lo
+      CC       H5Tpad.lo
+      CC       H5Tprecis.lo
+      CC       H5Tstrpad.lo
+      CC       H5Tvisit.lo
+      CC       H5Tvlen.lo
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tvlen.c:[m[K In function '[01m[KH5T__vlen_create[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tvlen.c:168:5:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of '[01m[KH5T_copy[m[K' discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         if(NULL == (dt->shared->parent = H5T_copy(base, H5T_COPY_ALL)))
+    [01;32m[K     ^[m[K
+    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Oprivate.h:41:0[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Dprivate.h:27[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tvlen.c:28[m[K:
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Tprivate.h:109:15:[m[K [01;36m[Knote: [m[Kexpected '[01m[Kstruct H5T_t *[m[K' but argument is of type '[01m[Kconst struct H5T_t *[m[K'
+     H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
+    [01;32m[K               ^[m[K
+      CC       H5TS.lo
+      CC       H5VM.lo
+      CC       H5WB.lo
+      CC       H5Z.lo
+      CC       H5Zdeflate.lo
+      CC       H5Zfletcher32.lo
+      CC       H5Znbit.lo
+      CC       H5Zshuffle.lo
+      CC       H5Zszip.lo
+      CC       H5Zscaleoffset.lo
+      CC       H5Ztrans.lo
       CCLD     libhdf5.la
     make[2]: Leaving directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/src'
     make[1]: Leaving directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/src'
     Making all in test
     make[1]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/test'
+      CC       dynlib1.lo
+      CCLD     libdynlib1.la
+      CC       dynlib2.lo
+      CCLD     libdynlib2.la
+      CC       dynlib3.lo
+      CCLD     libdynlib3.la
       CC       h5test.lo
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.c:[m[K In function '[01m[Kh5_cleanup[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.c:160:21:[m[K [01;35m[Kwarning: [m[Kformat not a string literal, argument types not checked [-Wformat-nonliteral]
-                         HDsnprintf(temp, sizeof temp, filename, j);
-    [01;32m[K                     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.c:160:21:[m[K [01;35m[Kwarning: [m[Kformat not a string literal, argument types not checked [-Wformat-nonliteral]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.c:[m[K In function '[01m[Kh5_fileaccess[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.c:605:14:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Ksv[m[K' is 7168 bytes [-Wlarger-than=]
-             char sv[H5FD_MEM_NTYPES][1024];
-    [01;32m[K              ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.c:619:13:[m[K [01;35m[Kwarning: [m[Kassuming signed overflow does not occur when changing X +- C1 cmp C2 to X cmp C1 +- C2 [-Wstrict-overflow]
-                 memb_addr[mt] = (haddr_t)MAX(mt - 1, 0) * (HADDR_MAX / 10);
-    [01;32m[K             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.c:[m[K In function '[01m[Kh5_get_file_size[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.c:986:17:[m[K [01;35m[Kwarning: [m[Kformat not a string literal, argument types not checked [-Wformat-nonliteral]
-                     HDsnprintf(temp, sizeof temp, filename, j);
-    [01;32m[K                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.c:986:17:[m[K [01;35m[Kwarning: [m[Kformat not a string literal, argument types not checked [-Wformat-nonliteral]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.c:[m[K In function '[01m[Kprint_func[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.c:1023:3:[m[K [01;35m[Kwarning: [m[Kfunction might be possible candidate for '[01m[Kgnu_printf[m[K' format attribute [-Wsuggest-attribute=format]
-       ret_value = vprintf(format, arglist);
-    [01;32m[K   ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.c:[m[K In function '[01m[Kh5_make_local_copy[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.c:1192:11:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Kbuf[m[K' is 4096 bytes [-Wlarger-than=]
-         char  buf[READ_BUF_SIZE];           /* Buffer for copying data */
-    [01;32m[K           ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.c:28:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.c:[m[K At top level:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.c:[m[K In function '[01m[Kh5_rmprefix[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.c:526:1:[m[K [01;35m[Kwarning: [m[Kfunction might be candidate for attribute '[01m[Kpure[m[K' [-Wsuggest-attribute=pure]
-     h5_rmprefix(const char *filename)
-    [01;32m[K ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.c:[m[K In function '[01m[Kh5_fileaccess[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.c:558:1:[m[K [01;35m[Kwarning: [m[Kstack usage is 8464 bytes [-Wstack-usage=]
-     h5_fileaccess(void)
-    [01;32m[K ^[m[K
-      CCLD     libh5test.la
-      CC       tarray.o
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:[m[K In function '[01m[Ktest_array_funcs[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:192:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Ksize_t[m[K' may alter its value [-Wconversion]
-         size=H5Tget_precision(type);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:195:21:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Ksize_t[m[K' may alter its value [-Wconversion]
-         size=H5Tget_size(type);
-    [01;32m[K                     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:198:22:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Ksize_t[m[K' may alter its value [-Wconversion]
-         size=H5Tget_ebias(type);
-    [01;32m[K                      ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:[m[K In function '[01m[Ktest_array_compound_atomic[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:544:13:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-                 wdata[i][j].f = (float)(i * 2.5F + j);
-    [01;32m[K             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:544:13:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:689:17:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-                     TestErrPrintf("Array data information doesn't match!, wdata[%d][%d].f=%f, rdata[%d][%d].f=%f\n", (int)i, (int)j, wdata[i][j].f, (int)i, (int)j, rdata[i][j].f);
-    [01;32m[K                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:689:17:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:[m[K In function '[01m[Ktest_array_compound_array[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:748:17:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-                     wdata[i][j].f[k]=(float)(i * 10.0F + j * 2.5F + k);
-    [01;32m[K                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:748:17:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:748:17:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:932:21:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-                         TestErrPrintf("Array data information doesn't match!, wdata[%d][%d].f[%d]=%f, rdata[%d][%d].f[%d]=%f\n",(int)i,(int)j,(int)k,wdata[i][j].f[k],(int)i,(int)j,(int)k,rdata[i][j].f[k]);
-    [01;32m[K                     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:932:21:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:[m[K In function '[01m[Ktest_array_alloc_custom[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:977:9:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Ksize_t[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-             *mem_used+=size;
-    [01;32m[K         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:977:18:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Ksize_t[m[K' may alter its value [-Wconversion]
-             *mem_used+=size;
-    [01;32m[K                  ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:[m[K In function '[01m[Ktest_array_free_custom[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1005:9:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Ksize_t[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-             *mem_used-=*(size_t *)mem;
-    [01;32m[K         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1005:18:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Ksize_t[m[K' may alter its value [-Wconversion]
-             *mem_used-=*(size_t *)mem;
-    [01;32m[K                  ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/testhdf5.h:27:0[m[K,
-                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:24[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:[m[K In function '[01m[Ktest_array_vlen_atomic[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1044:40:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Klong unsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-                 wdata[i][j].p=HDmalloc((i+j+1)*sizeof(unsigned int));
-    [01;32m[K                                        ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5private.h:980:35:[m[K [01;36m[Knote: [m[Kin definition of macro '[01m[KHDmalloc[m[K'
-         #define HDmalloc(Z)    malloc(Z)
-    [01;32m[K                                   ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1045:32:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Ksize_t[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-                 wdata[i][j].len=i+j+1;
-    [01;32m[K                                ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1046:13:[m[K [01;35m[Kwarning: [m[Kassuming signed overflow does not occur when reducing constant in comparison [-Wstrict-overflow]
-                 for(k=0; k<(i+j+1); k++)
-    [01;32m[K             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1047:62:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-                     ((unsigned int *)wdata[i][j].p)[k]=i*100+j*10+k;
-    [01;32m[K                                                              ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/testhdf5.h:27:0[m[K,
-                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:24[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:[m[K In function '[01m[Ktest_array_vlen_array[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1255:40:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Klong unsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-                 wdata[i][j].p=HDmalloc((i+j+1)*(sizeof(unsigned int)*ARRAY1_DIM1));
-    [01;32m[K                                        ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5private.h:980:35:[m[K [01;36m[Knote: [m[Kin definition of macro '[01m[KHDmalloc[m[K'
-         #define HDmalloc(Z)    malloc(Z)
-    [01;32m[K                                   ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1256:32:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Ksize_t[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-                 wdata[i][j].len=i+j+1;
-    [01;32m[K                                ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1257:13:[m[K [01;35m[Kwarning: [m[Kassuming signed overflow does not occur when reducing constant in comparison [-Wstrict-overflow]
-                 for(k=0; k<(i+j+1); k++)
-    [01;32m[K             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1259:87:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-                         ((unsigned int *)wdata[i][j].p)[k*ARRAY1_DIM1+l]=i*1000+j*100+k*10+l;
-    [01;32m[K                                                                                       ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:[m[K In function '[01m[Ktest_array_bkg[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1537:34:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-        cf[i].b[j] = (float)(100.0F*(i+1) + 0.01F*j);
-    [01;32m[K                                  ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1537:4:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-        cf[i].b[j] = (float)(100.0F*(i+1) + 0.01F*j);
-    [01;32m[K    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1538:35:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-        cf[i].c[j] = (double)(100.0F*(i+1) + 0.02F*j);
-    [01;32m[K                                   ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1538:4:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-        cf[i].c[j] = (double)(100.0F*(i+1) + 0.02F*j);
-    [01;32m[K    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1622:17:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-                     TestErrPrintf("Field b data doesn't match, cf[%d].b[%d]=%f, cfr[%d].b[%d]=%f\n",(int)i,(int)j,(float)cf[i].b[j],(int)i,(int)j,(float)cfr[i].b[j]);
-    [01;32m[K                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1622:17:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1626:17:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-                     TestErrPrintf("Field c data doesn't match, cf[%d].b[%d]=%f, cfr[%d].b[%d]=%f\n",(int)i,(int)j,(float)cf[i].c[j],(int)i,(int)j,(float)cfr[i].c[j]);
-    [01;32m[K                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1626:17:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1689:17:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-                     TestErrPrintf("Field data doesn't match, fld[%d].b[%d]=%f, fldr[%d].b[%d]=%f\n",(int)i,(int)j,(float)fld[i].b[j],(int)i,(int)j,(float)fldr[i].b[j]);
-    [01;32m[K                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1689:17:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1715:17:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-                     TestErrPrintf("Field b data doesn't match, cf[%d].b[%d]=%f, cfr[%d].b[%d]=%f\n",(int)i,(int)j,(float)cf[i].b[j],(int)i,(int)j,(float)cfr[i].b[j]);
-    [01;32m[K                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1715:17:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1719:17:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-                     TestErrPrintf("Field c data doesn't match, cf[%d].b[%d]=%f, cfr[%d].b[%d]=%f\n",(int)i,(int)j,(float)cf[i].c[j],(int)i,(int)j,(float)cfr[i].c[j]);
-    [01;32m[K                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1719:17:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1764:17:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-                     TestErrPrintf("Field b data doesn't match, cf[%d].b[%d]=%f, cfr[%d].b[%d]=%f\n",(int)i,(int)j,(float)cf[i].b[j],(int)i,(int)j,(float)cfr[i].b[j]);
-    [01;32m[K                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1764:17:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1768:17:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-                     TestErrPrintf("Field c data doesn't match, cf[%d].b[%d]=%f, cfr[%d].b[%d]=%f\n",(int)i,(int)j,(float)cf[i].c[j],(int)i,(int)j,(float)cfr[i].c[j]);
-    [01;32m[K                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:1768:17:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:25:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tarray.c:[m[K At top level:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:35:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir_filename[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir_filename(const char *filename)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
-      CC       tfile.o
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:[m[K In function '[01m[Ktest_file_close[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:817:5:[m[K [01;35m[Kwarning: [m[Kenumeration value '[01m[KH5F_CLOSE_DEFAULT[m[K' not handled in switch [-Wswitch-enum]
-         switch(fc_degree) {
+      CC       testframe.lo
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/testframe.c:[m[K In function '[01m[KPrintErrorStackOn[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/testframe.c:618:5:[m[K [01;35m[Kwarning: [m[Kpassing argument 2 of '[01m[KH5Eset_auto2[m[K' from incompatible pointer type [enabled by default]
+         H5Eset_auto2(H5E_DEFAULT, PrintErrorStackFunc, PrintErrorStackData);
     [01;32m[K     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:[m[K In function '[01m[Ktest_obj_count_and_id[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:1328:17:[m[K [01;35m[Kwarning: [m[Kenumeration value '[01m[KH5I_UNINIT[m[K' not handled in switch [-Wswitch-enum]
-                     switch(id_type) {
-    [01;32m[K                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:1328:17:[m[K [01;35m[Kwarning: [m[Kenumeration value '[01m[KH5I_BADID[m[K' not handled in switch [-Wswitch-enum]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:1328:17:[m[K [01;35m[Kwarning: [m[Kenumeration value '[01m[KH5I_DATATYPE[m[K' not handled in switch [-Wswitch-enum]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:1328:17:[m[K [01;35m[Kwarning: [m[Kenumeration value '[01m[KH5I_DATASPACE[m[K' not handled in switch [-Wswitch-enum]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:1328:17:[m[K [01;35m[Kwarning: [m[Kenumeration value '[01m[KH5I_ATTR[m[K' not handled in switch [-Wswitch-enum]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:1328:17:[m[K [01;35m[Kwarning: [m[Kenumeration value '[01m[KH5I_REFERENCE[m[K' not handled in switch [-Wswitch-enum]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:1328:17:[m[K [01;35m[Kwarning: [m[Kenumeration value '[01m[KH5I_VFL[m[K' not handled in switch [-Wswitch-enum]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:1328:17:[m[K [01;35m[Kwarning: [m[Kenumeration value '[01m[KH5I_GENPROP_CLS[m[K' not handled in switch [-Wswitch-enum]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:1328:17:[m[K [01;35m[Kwarning: [m[Kenumeration value '[01m[KH5I_GENPROP_LST[m[K' not handled in switch [-Wswitch-enum]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:1328:17:[m[K [01;35m[Kwarning: [m[Kenumeration value '[01m[KH5I_ERROR_CLASS[m[K' not handled in switch [-Wswitch-enum]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:1328:17:[m[K [01;35m[Kwarning: [m[Kenumeration value '[01m[KH5I_ERROR_MSG[m[K' not handled in switch [-Wswitch-enum]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:1328:17:[m[K [01;35m[Kwarning: [m[Kenumeration value '[01m[KH5I_ERROR_STACK[m[K' not handled in switch [-Wswitch-enum]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:1328:17:[m[K [01;35m[Kwarning: [m[Kenumeration value '[01m[KH5I_NTYPES[m[K' not handled in switch [-Wswitch-enum]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:[m[K In function '[01m[Ktest_file_open_overlap[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:1851:29:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Kssize_t[m[K' may alter its value [-Wconversion]
-         nobjs = H5Fget_obj_count(fid1, H5F_OBJ_LOCAL|H5F_OBJ_ALL);
-    [01;32m[K                             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:1872:29:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Kssize_t[m[K' may alter its value [-Wconversion]
-         nobjs = H5Fget_obj_count(fid2, H5F_OBJ_ALL);
-    [01;32m[K                             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:[m[K In function '[01m[Ktest_rw_noupdate[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:2541:13:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' to match other operand of binary expression [-Wdouble-promotion]
-         if(diff > 0.0F) {
-    [01;32m[K             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:2574:21:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' to match other operand of binary expression [-Wdouble-promotion]
-             ret = (diff > 0.0F);
-    [01;32m[K                     ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:26:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tfile.c:[m[K At top level:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:35:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir_filename[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir_filename(const char *filename)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
+    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Eprivate.h:22:0[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/testhdf5.h:28[m[K,
+                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/testframe.c:24[m[K:
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5Epublic.h:174:15:[m[K [01;36m[Knote: [m[Kexpected '[01m[KH5E_auto2_t[m[K' but argument is of type '[01m[Kherr_t (**)(hid_t,  void *)[m[K'
+     H5_DLL herr_t H5Eset_auto2(hid_t estack_id, H5E_auto2_t func, void *client_data);
+    [01;32m[K               ^[m[K
+      CC       cache_common.lo
+      CCLD     libh5test.la
+      CC       testhdf5.o
+      CC       tarray.o
+      CC       tattr.o
+      CC       tchecksum.o
+      CC       tconfig.o
+      CC       tfile.o
+      CC       tgenprop.o
+      CC       th5o.o
       CC       th5s.o
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:[m[K In function '[01m[Ktest_h5s_zero_dim[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:543:25:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Kwdata_real[m[K' is 2340 bytes [-Wlarger-than=]
-         int                 wdata_real[SPACE1_DIM1][SPACE1_DIM2][SPACE1_DIM3];
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:544:25:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Krdata_real[m[K' is 2340 bytes [-Wlarger-than=]
-         int                 rdata_real[SPACE1_DIM1][SPACE1_DIM2][SPACE1_DIM3];
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:562:29:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Kunsigned int[m[K' may change the sign of the result [-Wsign-conversion]
-                 wdata[i][j] = i + j;
-    [01;32m[K                             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:564:35:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kshort int[m[K' from '[01m[Kunsigned int[m[K' may alter its value [-Wconversion]
-                 wdata_short[i][j] = i + j;
-    [01;32m[K                                   ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:571:45:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Kunsigned int[m[K' may change the sign of the result [-Wsign-conversion]
-                     wdata_real[i][j][k] = i + j + k;
-    [01;32m[K                                             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:574:89:[m[K [01;35m[Kwarning: [m[Kincrement of enumeration value is invalid in C++ [-Wc++-compat]
-         for(alloc_time = H5D_ALLOC_TIME_EARLY; alloc_time <= H5D_ALLOC_TIME_INCR; alloc_time++) {
-    [01;32m[K                                                                                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:[m[K In function '[01m[Ktest_h5s_compound_scalar_read[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:1589:9:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-             printf("scalar data different: space4_data.f=%f, read_data4.f=%f\n",space4_data.f,rdata.f);
-    [01;32m[K         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:1589:9:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:[m[K At top level:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:1611:9:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Kchunk_data_dbl[m[K' is 1200000 bytes [-Wlarger-than=]
-     double  chunk_data_dbl[50000][3];
-    [01;32m[K         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:1612:8:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Kchunk_data_flt[m[K' is 600000 bytes [-Wlarger-than=]
-     float  chunk_data_flt[50000][3];
-    [01;32m[K        ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:[m[K In function '[01m[Ktest_h5s_chunk[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:1655:47:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-                 chunk_data_flt[i][j] = (float)((i + 1) * 2.5F - j * 100.3F);
-    [01;32m[K                                               ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:1655:13:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-                 chunk_data_flt[i][j] = (float)((i + 1) * 2.5F - j * 100.3F);
-    [01;32m[K             ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/testhdf5.h:31:0[m[K,
-                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:24[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.h:135:41:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' to match other operand of binary expression [-Wdouble-promotion]
-     #define DBL_REL_EQUAL(X,Y,M)    (fabs((Y-X)/X)<M)
-    [01;32m[K                                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:1691:17:[m[K [01;36m[Knote: [m[Kin expansion of macro '[01m[KDBL_REL_EQUAL[m[K'
-                 if(!DBL_REL_EQUAL(chunk_data_dbl[i][j], chunk_data_flt[i][j], 0.00001F))
-    [01;32m[K                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.h:135:47:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' to match other operand of binary expression [-Wdouble-promotion]
-     #define DBL_REL_EQUAL(X,Y,M)    (fabs((Y-X)/X)<M)
-    [01;32m[K                                               ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:1691:17:[m[K [01;36m[Knote: [m[Kin expansion of macro '[01m[KDBL_REL_EQUAL[m[K'
-                 if(!DBL_REL_EQUAL(chunk_data_dbl[i][j], chunk_data_flt[i][j], 0.00001F))
-    [01;32m[K                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:1692:17:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-                     TestErrPrintf("%u: chunk_data_dbl[%d][%d]=%e, chunk_data_flt[%d][%d]=%e\n", (unsigned)__LINE__, i, j, chunk_data_dbl[i][j], i, j, chunk_data_flt[i][j]);
-    [01;32m[K                 ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:25:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/th5s.c:[m[K At top level:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:35:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir_filename[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir_filename(const char *filename)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
+      CC       tcoords.o
+      CC       theap.o
+      CC       tid.o
+      CC       titerate.o
+      CC       tmeta.o
       CC       tmisc.o
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:191:10:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Km13_data[m[K' is 2400 bytes [-Wlarger-than=]
-     unsigned m13_data[MISC13_DIM1][MISC13_DIM2];           /* Data to write to dataset */
-    [01;32m[K          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:192:10:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Km13_rdata[m[K' is 2400 bytes [-Wlarger-than=]
-     unsigned m13_rdata[MISC13_DIM1][MISC13_DIM2];          /* Data read from dataset */
-    [01;32m[K          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:[m[K In function '[01m[Kcreate_struct3[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:716:14:[m[K [01;35m[Kwarning: [m[Krequest for implicit conversion from '[01m[Kvoid *[m[K' to '[01m[Kstruct misc5_struct3_hndl *[m[K' not permitted in C++ [-Wc++-compat]
-         str3hndl = HDmalloc(sizeof(misc5_struct3_hndl));
-    [01;32m[K              ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:[m[K In function '[01m[Kcreate_struct2[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:759:14:[m[K [01;35m[Kwarning: [m[Krequest for implicit conversion from '[01m[Kvoid *[m[K' to '[01m[Kstruct misc5_struct2_hndl *[m[K' not permitted in C++ [-Wc++-compat]
-         str2hndl = HDmalloc(sizeof(misc5_struct2_hndl));
-    [01;32m[K              ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:[m[K In function '[01m[Kcreate_struct1[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:825:14:[m[K [01;35m[Kwarning: [m[Krequest for implicit conversion from '[01m[Kvoid *[m[K' to '[01m[Kstruct misc5_struct1_hndl *[m[K' not permitted in C++ [-Wc++-compat]
-         str1hndl = HDmalloc(sizeof(misc5_struct1_hndl));
-    [01;32m[K              ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:[m[K In function '[01m[Ktest_misc8[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:1246:10:[m[K [01;35m[Kwarning: [m[Krequest for implicit conversion from '[01m[Kvoid *[m[K' to '[01m[Kint *[m[K' not permitted in C++ [-Wc++-compat]
-         wdata=HDmalloc(sizeof(int)*MISC8_DIM0*MISC8_DIM1);
-    [01;32m[K          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:1257:40:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Kunsigned int[m[K' may change the sign of the result [-Wsign-conversion]
-                 *tdata++=((u*MISC8_DIM1)+v)%13;
-    [01;32m[K                                        ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:32:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:1313:50:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Klong int[m[K' from '[01m[Klong unsigned int[m[K' may change the sign of the result [-Wsign-conversion]
-         VERIFY(storage_size, MISC8_DIM0 * MISC8_DIM1 * H5Tget_size(H5T_NATIVE_INT), "H5Dget_storage_size");
-    [01;32m[K                                                  ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/testhdf5.h:85:40:[m[K [01;36m[Knote: [m[Kin definition of macro '[01m[KVERIFY[m[K'
-         long __x = (long)_x, __val = (long)_val;          \
-    [01;32m[K                                        ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:1339:50:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Klong int[m[K' from '[01m[Klong unsigned int[m[K' may change the sign of the result [-Wsign-conversion]
-         VERIFY(storage_size, MISC8_DIM0 * MISC8_DIM1 * H5Tget_size(H5T_NATIVE_INT), "H5Dget_storage_size");
-    [01;32m[K                                                  ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/testhdf5.h:85:40:[m[K [01;36m[Knote: [m[Kin definition of macro '[01m[KVERIFY[m[K'
-         long __x = (long)_x, __val = (long)_val;          \
-    [01;32m[K                                        ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:1364:50:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Klong int[m[K' from '[01m[Klong unsigned int[m[K' may change the sign of the result [-Wsign-conversion]
-         VERIFY(storage_size, MISC8_DIM0 * MISC8_DIM1 * H5Tget_size(H5T_NATIVE_INT), "H5Dget_storage_size");
-    [01;32m[K                                                  ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/testhdf5.h:85:40:[m[K [01;36m[Knote: [m[Kin definition of macro '[01m[KVERIFY[m[K'
-         long __x = (long)_x, __val = (long)_val;          \
-    [01;32m[K                                        ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:1408:50:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Klong int[m[K' from '[01m[Klong unsigned int[m[K' may change the sign of the result [-Wsign-conversion]
-         VERIFY(storage_size, MISC8_DIM0 * MISC8_DIM1 * H5Tget_size(H5T_NATIVE_INT), "H5Dget_storage_size");
-    [01;32m[K                                                  ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/testhdf5.h:85:40:[m[K [01;36m[Knote: [m[Kin definition of macro '[01m[KVERIFY[m[K'
-         long __x = (long)_x, __val = (long)_val;          \
-    [01;32m[K                                        ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:1435:50:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Klong int[m[K' from '[01m[Klong unsigned int[m[K' may change the sign of the result [-Wsign-conversion]
-         VERIFY(storage_size, MISC8_DIM0 * MISC8_DIM1 * H5Tget_size(H5T_NATIVE_INT), "H5Dget_storage_size");
-    [01;32m[K                                                  ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/testhdf5.h:85:40:[m[K [01;36m[Knote: [m[Kin definition of macro '[01m[KVERIFY[m[K'
-         long __x = (long)_x, __val = (long)_val;          \
-    [01;32m[K                                        ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:1465:50:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Klong int[m[K' from '[01m[Klong unsigned int[m[K' may change the sign of the result [-Wsign-conversion]
-         VERIFY(storage_size, MISC8_DIM0 * MISC8_DIM1 * H5Tget_size(H5T_NATIVE_INT), "H5Dget_storage_size");
-    [01;32m[K                                                  ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/testhdf5.h:85:40:[m[K [01;36m[Knote: [m[Kin definition of macro '[01m[KVERIFY[m[K'
-         long __x = (long)_x, __val = (long)_val;          \
-    [01;32m[K                                        ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:1489:66:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Klong int[m[K' from '[01m[Klong unsigned int[m[K' may change the sign of the result [-Wsign-conversion]
-         VERIFY(storage_size, 4 * MISC8_CHUNK_DIM0 * MISC8_CHUNK_DIM1 * H5Tget_size(H5T_NATIVE_INT), "H5Dget_storage_size");
-    [01;32m[K                                                                  ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/testhdf5.h:85:40:[m[K [01;36m[Knote: [m[Kin definition of macro '[01m[KVERIFY[m[K'
-         long __x = (long)_x, __val = (long)_val;          \
-    [01;32m[K                                        ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:1512:47:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Klong int[m[K' from '[01m[Klong unsigned int[m[K' may change the sign of the result [-Wsign-conversion]
-         VERIFY(storage_size, MISC8_DIM0*MISC8_DIM1*H5Tget_size(H5T_NATIVE_INT), "H5Dget_storage_size");
-    [01;32m[K                                               ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/testhdf5.h:85:40:[m[K [01;36m[Knote: [m[Kin definition of macro '[01m[KVERIFY[m[K'
-         long __x = (long)_x, __val = (long)_val;          \
-    [01;32m[K                                        ^[m[K
     [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:[m[K In function '[01m[Ktest_misc16[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:2725:25:[m[K [01;35m[Kwarning: [m[Kinitializer-string for array chars is too long for C++ [-Wc++-compat]
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:2725:25:[m[K [01;35m[Kwarning: [m[Kinitialization makes integer from pointer without a cast [enabled by default]
                              {"1234567", "1234567\0", "12345678", {NULL}};
     [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:2725:25:[m[K [01;35m[Kwarning: [m[Kinitializer-string for array chars is too long for C++ [-Wc++-compat]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:2725:25:[m[K [01;35m[Kwarning: [m[Kinitialization makes integer from pointer without a cast [enabled by default]
     [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:2725:25:[m[K [01;35m[Kwarning: [m[K(near initialization for '[01m[Kwdata[3][0][m[K') [enabled by default]
     [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:[m[K In function '[01m[Ktest_misc17[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:2804:25:[m[K [01;35m[Kwarning: [m[Kinitializer-string for array chars is too long for C++ [-Wc++-compat]
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:2804:25:[m[K [01;35m[Kwarning: [m[Kinitialization makes integer from pointer without a cast [enabled by default]
                              {"1234567", "1234567\0", "12345678", {NULL}};
     [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:2804:25:[m[K [01;35m[Kwarning: [m[Kinitializer-string for array chars is too long for C++ [-Wc++-compat]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:2804:25:[m[K [01;35m[Kwarning: [m[Kinitialization makes integer from pointer without a cast [enabled by default]
     [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:2804:25:[m[K [01;35m[Kwarning: [m[K(near initialization for '[01m[Kwdata[3][0][m[K') [enabled by default]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:[m[K In function '[01m[Ktest_misc23[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:3882:25:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kherr_t[m[K' from '[01m[Kssize_t[m[K' may alter its value [-Wconversion]
-         status = H5Iget_name(tmp_id, objname, (size_t)MISC23_NAME_BUF_SIZE);
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:[m[K In function '[01m[Ktest_misc28[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:5038:9:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kchar[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-             buf[i] = i;
-    [01;32m[K         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:5059:34:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kchar[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-             buf[i] = MISC28_SIZE - 1 - i;
-    [01;32m[K                                  ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:33:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/tmisc.c:[m[K At top level:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:35:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir_filename[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir_filename(const char *filename)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
+      CC       trefer.o
+      CC       trefstr.o
+      CC       tselect.o
+      CC       tskiplist.o
+      CC       tsohm.o
+      CC       ttime.o
+      CC       ttst.o
+      CC       tunicode.o
+      CC       tvlstr.o
+      CC       tvltypes.o
       CCLD     testhdf5
       CC       lheap.o
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/lheap.c:[m[K In function '[01m[Kmain[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/lheap.c:100:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kchar[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-                 buf[j] = '0' + j % 10;
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/lheap.c:133:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kchar[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-                 buf[j] = '0' + j % 10;
-    [01;32m[K                          ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/lheap.c:23:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/lheap.c:[m[K At top level:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
       CCLD     lheap
       CC       ohdr.o
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/ohdr.c:20:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:35:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir_filename[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir_filename(const char *filename)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
       CCLD     ohdr
+      CC       stab.o
       CCLD     stab
+      CC       gheap.o
       CCLD     gheap
+      CC       cache.o
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cache.c:[m[K In function '[01m[Kcheck_auto_cache_resize_input_errs[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cache.c:25757:9:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function '[01m[Kresize_configs_are_equal[m[K' [-Wimplicit-function-declaration]
+             } else if ( ! resize_configs_are_equal(&test_auto_size_ctl, \
+    [01;32m[K         ^[m[K
       CCLD     cache
+      CC       cache_api.o
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cache_api.c:[m[K In function '[01m[Kcheck_fapl_mdc_api_calls[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cache_api.c:265:2:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function '[01m[Kresize_configs_are_equal[m[K' [-Wimplicit-function-declaration]
+      if ( ! resize_configs_are_equal(&default_auto_size_ctl, \
+    [01;32m[K  ^[m[K
       CCLD     cache_api
+      CC       pool.o
       CCLD     pool
+      CC       accum.o
       CCLD     accum
+      CC       hyperslab.o
       CCLD     hyperslab
+      CC       istore.o
       CCLD     istore
+      CC       bittests.o
       CCLD     bittests
+      CC       dt_arith.o
       CCLD     dt_arith
       CC       dtypes.o
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:[m[K In function '[01m[Ktest_compound_9[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:1648:5:[m[K [01;35m[Kwarning: [m[Kinitialization discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
-         cmpd_struct wdata = {11, "variable-length string", 22};
-    [01;32m[K     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:[m[K In function '[01m[Ktest_compound_10[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:1867:25:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kchar[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-             wdata[i].str[9] += (char)i;
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:1872:43:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kchar[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-             ((char*)(wdata[i].text.p))[len-2] += (char)i;
-    [01;32m[K                                           ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:[m[K In function '[01m[Ktest_compound_11[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:2111:37:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-             if(((big_t *)buf_orig)[u].d1!=((little_t *)buf)[u].d1) {
-    [01;32m[K                                     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:2151:37:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-             if(((big_t *)buf_orig)[u].d1!=((little_t *)buf)[u].d1) {
-    [01;32m[K                                     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:2185:37:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-             if(((big_t *)buf_orig)[u].d1!=((little_t *)buf)[u].d1) {
-    [01;32m[K                                     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:[m[K In function '[01m[Ktest_compound_13[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:2402:19:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-         if(data_out.y != data_in.y) TEST_ERROR
-    [01;32m[K                   ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:[m[K In function '[01m[Ktest_compound_14[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:2456:5:[m[K [01;35m[Kwarning: [m[Kinitialization discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
-         cmpd_struct_1 wdata1 = {'A', 'B', "variable-length string"};
-    [01;32m[K     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:2459:5:[m[K [01;35m[Kwarning: [m[Kinitialization discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
-         cmpd_struct_2 wdata2 = {'C', 'D', "another vlen!", 1, 2, -1, 9001};
-    [01;32m[K     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:[m[K In function '[01m[Ktest_int_float_except[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:5965:20:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-             if(*floatp != buf_float[u]) TEST_ERROR
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:5986:20:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-             if(*floatp != buf2_float[u]) TEST_ERROR
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:[m[K In function '[01m[Kcreate_del_obj_named_test_file[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:6675:12:[m[K [01;35m[Kwarning: [m[Kvariable '[01m[Kstatus[m[K' set but not used [-Wunused-but-set-variable]
-         herr_t status;      /* Generic return value */
-    [01;32m[K            ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:[m[K In function '[01m[Ktest_utf_ascii_conv[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:7215:55:[m[K [01;35m[Kwarning: [m[Kcast discards '[01m[K__attribute__((const))[m[K' qualifier from pointer target type [-Wcast-qual]
-             status = H5Tconvert(utf8_vtid, ascii_vtid, 1, (void *)utf8_w, NULL, H5P_DEFAULT);
-    [01;32m[K                                                       ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:7248:55:[m[K [01;35m[Kwarning: [m[Kcast discards '[01m[K__attribute__((const))[m[K' qualifier from pointer target type [-Wcast-qual]
-             status = H5Tconvert(ascii_vtid, utf8_vtid, 1, (void *)ascii_w, NULL, H5P_DEFAULT);
-    [01;32m[K                                                       ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:26:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dtypes.c:[m[K At top level:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
       CCLD     dtypes
       CC       dsets.o
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:207:5:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Kpoints[m[K' is 80000 bytes [-Wlarger-than=]
-     int points[DSET_DIM1][DSET_DIM2], check[DSET_DIM1][DSET_DIM2];
-    [01;32m[K     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:207:35:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Kcheck[m[K' is 80000 bytes [-Wlarger-than=]
-     int points[DSET_DIM1][DSET_DIM2], check[DSET_DIM1][DSET_DIM2];
-    [01;32m[K                                   ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:208:8:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Kpoints_dbl[m[K' is 160000 bytes [-Wlarger-than=]
-     double points_dbl[DSET_DIM1][DSET_DIM2], check_dbl[DSET_DIM1][DSET_DIM2];
-    [01;32m[K        ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:208:42:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Kcheck_dbl[m[K' is 160000 bytes [-Wlarger-than=]
-     double points_dbl[DSET_DIM1][DSET_DIM2], check_dbl[DSET_DIM1][DSET_DIM2];
-    [01;32m[K                                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_simple_io[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:403:25:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Krdata[m[K' is 80000 bytes [-Wlarger-than=]
-         int                 rdata[DSET_DIM1][DSET_DIM2];
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_userblock_offset[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:522:25:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Krdata[m[K' is 80000 bytes [-Wlarger-than=]
-         int                 rdata[DSET_DIM1][DSET_DIM2];
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_conv_buffer[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:1030:30:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-      cf->b[j] = (float)(100.0f*(j+1) + 0.01f*j);
-    [01;32m[K                              ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:1030:2:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-      cf->b[j] = (float)(100.0f*(j+1) + 0.01f*j);
-    [01;32m[K  ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:1033:22:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-      cf->c[j] = 100.0f*(j+1) + 0.02f*j;
-    [01;32m[K                      ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:1033:2:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-      cf->c[j] = 100.0f*(j+1) + 0.02f*j;
-    [01;32m[K  ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_nbit_int[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:2742:28:[m[K [01;35m[Kwarning: [m[Kcast from function call of type '[01m[Kdouble[m[K' to non-matching type '[01m[Klong long int[m[K' [-Wbad-function-cast]
-                                (long long)HDpow(2.0f, (double)(precision - 1))) << offset);
-    [01;32m[K                            ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:2780:28:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-                 if((new_data[i][j] & mask) != (orig_data[i][j] & mask)) {
-    [01;32m[K                            ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:2780:56:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-                 if((new_data[i][j] & mask) != (orig_data[i][j] & mask)) {
-    [01;32m[K                                                        ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_nbit_float[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:2890:33:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-                 if(!(orig_data[i][j]==orig_data[i][j])) continue;  /* skip if value is NaN */
-    [01;32m[K                                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:2891:31:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-                 if(new_data[i][j] != orig_data[i][j]) {
-    [01;32m[K                               ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_nbit_double[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3015:33:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-                 if(!(orig_data[i][j]==orig_data[i][j])) continue;  /* skip if value is NaN */
-    [01;32m[K                                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3016:31:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-                 if(new_data[i][j] != orig_data[i][j]) {
-    [01;32m[K                               ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_nbit_array[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3109:38:[m[K [01;35m[Kwarning: [m[Kcast from function call of type '[01m[Kdouble[m[K' to non-matching type '[01m[Klong long int[m[K' [-Wbad-function-cast]
-                                          (long long)HDpow(2.0F, (double)precision)) << offset);
-    [01;32m[K                                      ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_nbit_compound[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3268:30:[m[K [01;35m[Kwarning: [m[Kcast from function call of type '[01m[Kdouble[m[K' to non-matching type '[01m[Klong long int[m[K' [-Wbad-function-cast]
-                                  (long long)HDpow(2.0F, (double)(precision[0]-1))) << offset[0]);
-    [01;32m[K                              ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3270:30:[m[K [01;35m[Kwarning: [m[Kcast from function call of type '[01m[Kdouble[m[K' to non-matching type '[01m[Klong long int[m[K' [-Wbad-function-cast]
-                                  (long long)HDpow(2.0F, (double)(precision[1]-1))) << offset[1]);
-    [01;32m[K                              ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3272:30:[m[K [01;35m[Kwarning: [m[Kcast from function call of type '[01m[Kdouble[m[K' to non-matching type '[01m[Klong long int[m[K' [-Wbad-function-cast]
-                                  (long long)HDpow(2.0F, (double)(precision[2]-1))) << offset[2]);
-    [01;32m[K                              ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3315:31:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-                 if((new_data[i][j].i & i_mask) != (orig_data[i][j].i & i_mask) ||
-    [01;32m[K                               ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3315:63:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-                 if((new_data[i][j].i & i_mask) != (orig_data[i][j].i & i_mask) ||
-    [01;32m[K                                                               ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3316:17:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kchar[m[K' may change the sign of the result [-Wsign-conversion]
-                     (new_data[i][j].c & c_mask) != (orig_data[i][j].c & c_mask) ||
-    [01;32m[K                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3316:17:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kchar[m[K' may change the sign of the result [-Wsign-conversion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3317:17:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kshort int[m[K' may change the sign of the result [-Wsign-conversion]
-                     (new_data[i][j].s & s_mask) != (orig_data[i][j].s & s_mask) ||
-    [01;32m[K                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3317:17:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kshort int[m[K' may change the sign of the result [-Wsign-conversion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3318:35:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-                     (orig_data[i][j].f==orig_data[i][j].f && new_data[i][j].f != orig_data[i][j].f))
-    [01;32m[K                                   ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3318:75:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-                     (orig_data[i][j].f==orig_data[i][j].f && new_data[i][j].f != orig_data[i][j].f))
-    [01;32m[K                                                                           ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_nbit_compound_2[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3494:32:[m[K [01;35m[Kwarning: [m[Kcast from function call of type '[01m[Kdouble[m[K' to non-matching type '[01m[Klong long int[m[K' [-Wbad-function-cast]
-                                    (long long)HDpow(2.0F, (double)(precision[0]-1))) << offset[0]);
-    [01;32m[K                                ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3496:32:[m[K [01;35m[Kwarning: [m[Kcast from function call of type '[01m[Kdouble[m[K' to non-matching type '[01m[Klong long int[m[K' [-Wbad-function-cast]
-                                    (long long)HDpow(2.0F, (double)(precision[1]-1))) << offset[1]);
-    [01;32m[K                                ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3498:32:[m[K [01;35m[Kwarning: [m[Kcast from function call of type '[01m[Kdouble[m[K' to non-matching type '[01m[Klong long int[m[K' [-Wbad-function-cast]
-                                    (long long)HDpow(2.0F, (double)(precision[2]-1))) << offset[2]);
-    [01;32m[K                                ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3502:30:[m[K [01;35m[Kwarning: [m[Kcast from function call of type '[01m[Kdouble[m[K' to non-matching type '[01m[Klong long int[m[K' [-Wbad-function-cast]
-                                  (long long)HDpow(2.0F, (double)precision[3])) << offset[3]);
-    [01;32m[K                              ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3507:40:[m[K [01;35m[Kwarning: [m[Kcast from function call of type '[01m[Kdouble[m[K' to non-matching type '[01m[Klong long int[m[K' [-Wbad-function-cast]
-                                            (long long)HDpow(2.0F, (double)(precision[4]-1))) << offset[4]);
-    [01;32m[K                                        ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3512:42:[m[K [01;35m[Kwarning: [m[Kcast from function call of type '[01m[Kdouble[m[K' to non-matching type '[01m[Klong long int[m[K' [-Wbad-function-cast]
-                                              (long long)HDpow(2.0F, (double)(precision[0]-1))) << offset[0]);
-    [01;32m[K                                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3514:42:[m[K [01;35m[Kwarning: [m[Kcast from function call of type '[01m[Kdouble[m[K' to non-matching type '[01m[Klong long int[m[K' [-Wbad-function-cast]
-                                              (long long)HDpow(2.0F, (double)(precision[1]-1))) << offset[1]);
-    [01;32m[K                                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3516:42:[m[K [01;35m[Kwarning: [m[Kcast from function call of type '[01m[Kdouble[m[K' to non-matching type '[01m[Klong long int[m[K' [-Wbad-function-cast]
-                                              (long long)HDpow(2.0F, (double)(precision[2]-1))) << offset[2]);
-    [01;32m[K                                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3571:14:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kchar[m[K' may change the sign of the result [-Wsign-conversion]
-                  if((new_data[i][j].b[m][n]&b_mask)!=(orig_data[i][j].b[m][n]&b_mask)) {
-    [01;32m[K              ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3571:14:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kchar[m[K' may change the sign of the result [-Wsign-conversion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3578:40:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-                  if((new_data[i][j].d[m][n].i & i_mask)!=(orig_data[i][j].d[m][n].i & i_mask)||
-    [01;32m[K                                        ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3578:78:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-                  if((new_data[i][j].d[m][n].i & i_mask)!=(orig_data[i][j].d[m][n].i & i_mask)||
-    [01;32m[K                                                                              ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3579:17:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kchar[m[K' may change the sign of the result [-Wsign-conversion]
-                     (new_data[i][j].d[m][n].c & c_mask)!=(orig_data[i][j].d[m][n].c & c_mask)||
-    [01;32m[K                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3579:17:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kchar[m[K' may change the sign of the result [-Wsign-conversion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3580:17:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kshort int[m[K' may change the sign of the result [-Wsign-conversion]
-                     (new_data[i][j].d[m][n].s & s_mask)!=(orig_data[i][j].d[m][n].s & s_mask)||
-    [01;32m[K                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3580:17:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kshort int[m[K' may change the sign of the result [-Wsign-conversion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3581:42:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-                     (new_data[i][j].d[m][n].f==new_data[i][j].d[m][n].f &&
-    [01;32m[K                                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3582:43:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-                      new_data[i][j].d[m][n].f != new_data[i][j].d[m][n].f)) {
-    [01;32m[K                                           ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3588:29:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-             if((new_data[i][j].a.i & i_mask)!=(orig_data[i][j].a.i & i_mask)||
-    [01;32m[K                             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3588:61:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-             if((new_data[i][j].a.i & i_mask)!=(orig_data[i][j].a.i & i_mask)||
-    [01;32m[K                                                             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3589:12:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kchar[m[K' may change the sign of the result [-Wsign-conversion]
-                (new_data[i][j].a.c & c_mask)!=(orig_data[i][j].a.c & c_mask)||
-    [01;32m[K            ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3589:12:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kchar[m[K' may change the sign of the result [-Wsign-conversion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3590:12:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kshort int[m[K' may change the sign of the result [-Wsign-conversion]
-                (new_data[i][j].a.s & s_mask)!=(orig_data[i][j].a.s & s_mask)||
-    [01;32m[K            ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3590:12:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kshort int[m[K' may change the sign of the result [-Wsign-conversion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3591:31:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-                (new_data[i][j].a.f==new_data[i][j].a.f &&
-    [01;32m[K                               ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3592:32:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-                 new_data[i][j].a.f != new_data[i][j].a.f)||
-    [01;32m[K                                ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_nbit_compound_3[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3712:39:[m[K [01;35m[Kwarning: [m[Kcast from function call of type '[01m[Kdouble[m[K' to non-matching type '[01m[Klong int[m[K' [-Wbad-function-cast]
-             orig_data[i].i = HDrandom() % (long)HDpow(2.0F, 17.0F - 1.0F);
-    [01;32m[K                                       ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3712:37:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Klong int[m[K' may alter its value [-Wconversion]
-             orig_data[i].i = HDrandom() % (long)HDpow(2.0F, 17.0F - 1.0F);
-    [01;32m[K                                     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_nbit_int_size[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3830:13:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Korig_data[m[K' is 80000 bytes [-Wlarger-than=]
-         int     orig_data[DSET_DIM1][DSET_DIM2];
-    [01;32m[K             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3882:39:[m[K [01;35m[Kwarning: [m[Kcast from function call of type '[01m[Kdouble[m[K' to non-matching type '[01m[Kint[m[K' [-Wbad-function-cast]
-                orig_data[i][j] = rand() % (int)pow((double)2, (double)(precision-1)) << offset;
-    [01;32m[K                                       ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_nbit_flt_size[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3995:13:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Korig_data[m[K' is 80000 bytes [-Wlarger-than=]
-         float   orig_data[DSET_DIM1][DSET_DIM2];
-    [01;32m[K             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:4080:49:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-                orig_data[i][j] = (rand() % 1234567) / 2;
-    [01;32m[K                                                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_scaleoffset_float[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:4464:47:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-             orig_data[i][j] = (float)((HDrandom() % 100000) / 1000.0F);
-    [01;32m[K                                               ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_scaleoffset_float_2[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:4595:47:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-             orig_data[0][j] = (float)((HDrandom() % 100000) / 1000.0F);
-    [01;32m[K                                               ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_scaleoffset_double[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:4706:39:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-             orig_data[i][j] = (HDrandom() % 10000000) / 10000000.0F;
-    [01;32m[K                                       ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_scaleoffset_double_2[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:4837:39:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-             orig_data[0][j] = (HDrandom() % 10000000) / 10000000.0F;
-    [01;32m[K                                       ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:26:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_set_local[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.h:135:47:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' to match other operand of binary expression [-Wdouble-promotion]
-     #define DBL_REL_EQUAL(X,Y,M)    (fabs((Y-X)/X)<M)
-    [01;32m[K                                               ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:5835:17:[m[K [01;36m[Knote: [m[Kin expansion of macro '[01m[KDBL_REL_EQUAL[m[K'
-                 if(!DBL_REL_EQUAL(points_dbl[i][j],check_dbl[i][j],0.00001F)) {
-    [01;32m[K                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_deprec[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:6816:12:[m[K [01;35m[Kwarning: [m[Kvariable '[01m[Kstatus[m[K' set but not used [-Wunused-but-set-variable]
-         herr_t status;
-    [01;32m[K            ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_chunk_cache[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:7158:17:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' to match other operand of binary expression [-Wdouble-promotion]
-         w0_2 = w0_1 / 2.0F;
-    [01;32m[K                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_big_chunks_bypass_cache[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:7339:44:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Krdata1[m[K' is 4000 bytes [-Wlarger-than=]
-         static int  wdata[BYPASS_CHUNK_DIM/2], rdata1[BYPASS_DIM],
-    [01;32m[K                                            ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_chunk_expand[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:7583:93:[m[K [01;35m[Kwarning: [m[Kincrement of enumeration value is invalid in C++ [-Wc++-compat]
-             for(alloc_time = H5D_ALLOC_TIME_EARLY; alloc_time <= H5D_ALLOC_TIME_INCR; alloc_time++) {
-    [01;32m[K                                                                                             ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:27:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K At top level:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_simple_io[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:394:1:[m[K [01;35m[Kwarning: [m[Kstack usage is 81136 bytes [-Wstack-usage=]
-     test_simple_io(const char *env_h5_drvr, hid_t fapl)
-    [01;32m[K ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:496:1:[m[K [01;35m[Kwarning: [m[Kthe frame size of 81052 bytes is larger than 16384 bytes [-Wframe-larger-than=]
-     }
-    [01;32m[K ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_nbit_int_size[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3825:1:[m[K [01;35m[Kwarning: [m[Kstack usage is 80112 bytes [-Wstack-usage=]
-     test_nbit_int_size(hid_t file)
-    [01;32m[K ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3971:1:[m[K [01;35m[Kwarning: [m[Kthe frame size of 80040 bytes is larger than 16384 bytes [-Wframe-larger-than=]
-     }
-    [01;32m[K ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_nbit_flt_size[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:3990:1:[m[K [01;35m[Kwarning: [m[Kstack usage is 80112 bytes [-Wstack-usage=]
-     test_nbit_flt_size(hid_t file)
-    [01;32m[K ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:4168:1:[m[K [01;35m[Kwarning: [m[Kthe frame size of 80032 bytes is larger than 16384 bytes [-Wframe-larger-than=]
-     }
-    [01;32m[K ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Ktest_userblock_offset[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:514:1:[m[K [01;35m[Kwarning: [m[Kstack usage is 81088 bytes [-Wstack-usage=]
-     test_userblock_offset(const char *env_h5_drvr, hid_t fapl)
-    [01;32m[K ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:586:1:[m[K [01;35m[Kwarning: [m[Kthe frame size of 81040 bytes is larger than 16384 bytes [-Wframe-larger-than=]
-     }
-    [01;32m[K ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:[m[K In function '[01m[Kfilter_bogus2[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/dsets.c:1360:18:[m[K [01;35m[Kwarning: [m[Kcannot optimize loop, the loop counter may overflow [-Wunsafe-loop-optimizations]
-                 while(buf_left>0) {
-    [01;32m[K                  ^[m[K
       CCLD     dsets
+      CC       cmpd_dset.o
       CCLD     cmpd_dset
       CC       filter_fail.o
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/filter_fail.c:25:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:35:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir_filename[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir_filename(const char *filename)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
       CCLD     filter_fail
+      CC       extend.o
       CCLD     extend
+      CC       external.o
       CCLD     external
+      CC       efc.o
       CCLD     efc
       CC       objcopy.o
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:[m[K In function '[01m[Kcompare_data[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:1067:24:[m[K [01;35m[Kwarning: [m[Kcast discards '[01m[K__attribute__((const))[m[K' qualifier from pointer target type [-Wcast-qual]
-                 ref_buf1 = (const hdset_reg_ref_t *)buf1;
-    [01;32m[K                        ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:1068:24:[m[K [01;35m[Kwarning: [m[Kcast discards '[01m[K__attribute__((const))[m[K' qualifier from pointer target type [-Wcast-qual]
-                 ref_buf2 = (const hdset_reg_ref_t *)buf2;
-    [01;32m[K                        ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:[m[K In function '[01m[Ktest_copy_dataset_compound[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:2318:30:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-             buf[i].d = 1.0F / (i + 1);
-    [01;32m[K                              ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:[m[K In function '[01m[Ktest_copy_dataset_chunked[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:2450:9:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-             buf1d[i] = (float)(i / 2.0F);
-    [01;32m[K         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:2452:13:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-                 buf2d[i][j] = (float)(i + (j / 100.0F));
-    [01;32m[K             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:2452:13:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:[m[K In function '[01m[Ktest_copy_dataset_chunked_sparse[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:2793:9:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-             buf1d[i] = (float)(i / 10.0F);
-    [01;32m[K         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:2795:13:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-                 buf2d[i][j] = (float)(i + (j / 100.0F));
-    [01;32m[K             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:2795:13:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:[m[K In function '[01m[Ktest_copy_dataset_compact[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:3117:13:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-                 buf[i][j] = (float)(i+j/100.0F);
-    [01;32m[K             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:3117:13:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kint[m[K' may alter its value [-Wconversion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:[m[K In function '[01m[Ktest_copy_dataset_contig_cmpd_vl[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:7597:22:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Kunsigned int[m[K' may change the sign of the result [-Wsign-conversion]
-             buf[i].a = i * (i - 1);
-    [01;32m[K                      ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:7602:9:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kunsigned int[m[K' may alter its value [-Wconversion]
-             buf[i].c = 1.0F / (i + 1.0F);
-    [01;32m[K         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:[m[K In function '[01m[Ktest_copy_dataset_chunked_cmpd_vl[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:7736:22:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Kunsigned int[m[K' may change the sign of the result [-Wsign-conversion]
-             buf[i].a = i * (i - 1);
-    [01;32m[K                      ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:7741:9:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kunsigned int[m[K' may alter its value [-Wconversion]
-             buf[i].c = 1.0F / (i + 1.0F);
-    [01;32m[K         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:[m[K In function '[01m[Ktest_copy_dataset_compact_cmpd_vl[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:7881:22:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Kunsigned int[m[K' may change the sign of the result [-Wsign-conversion]
-             buf[i].a = i * (i - 1);
-    [01;32m[K                      ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:7886:9:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kfloat[m[K' from '[01m[Kunsigned int[m[K' may alter its value [-Wconversion]
-             buf[i].c = 1.0F / (i + 1.0F);
-    [01;32m[K         ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:25:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:[m[K At top level:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:35:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir_filename[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir_filename(const char *filename)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:[m[K In function '[01m[Kaddr_lookup.isra.0[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/objcopy.c:201:1:[m[K [01;35m[Kwarning: [m[Kfunction might be candidate for attribute '[01m[Kpure[m[K' if it is known to return normally [-Wsuggest-attribute=pure]
-     addr_lookup(H5O_info_t *oi)
-    [01;32m[K ^[m[K
       CCLD     objcopy
       CC       links.o
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:[m[K In function '[01m[Kexternal_link_dangling[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:2698:36:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Khid_t[m[K' from '[01m[Kssize_t[m[K' may alter its value [-Wconversion]
-             status = H5Lget_name_by_idx(rid, "no_file", H5_INDEX_NAME, H5_ITER_INC, 0, NULL, 0, H5P_DEFAULT);
-    [01;32m[K                                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:[m[K In function '[01m[Kexternal_set_elink_fapl1[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:3500:17:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Ksv[m[K' is 3500 bytes [-Wlarger-than=]
-         char        sv[H5FD_MEM_NTYPES][500];
-    [01;32m[K                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:[m[K In function '[01m[Kexternal_set_elink_fapl2[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:3699:10:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Kpoints[m[K' is 6400 bytes [-Wlarger-than=]
-         int  points[NUM40][NUM40];
-    [01;32m[K          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:[m[K In function '[01m[Klink_filters[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:9802:48:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' to match other operand of binary expression [-Wdouble-promotion]
-                     > ((double)filesize_unfiltered * FILTER_FILESIZE_MAX_FRACTION))
-    [01;32m[K                                                ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:[m[K In function '[01m[Klink_info_by_idx[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:11058:41:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kherr_t[m[K' from '[01m[Kssize_t[m[K' may alter its value [-Wconversion]
-                     ret = H5Lget_name_by_idx(group_id, ".", H5_INDEX_CRT_ORDER, H5_ITER_INC, (hsize_t)0, tmpname, (size_t)NAME_BUF_SIZE, H5P_DEFAULT);
-    [01;32m[K                                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:11100:41:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kherr_t[m[K' from '[01m[Kssize_t[m[K' may alter its value [-Wconversion]
-                     ret = H5Lget_name_by_idx(group_id, ".", H5_INDEX_CRT_ORDER, H5_ITER_INC, (hsize_t)u, tmpname, (size_t)NAME_BUF_SIZE, H5P_DEFAULT);
-    [01;32m[K                                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:11142:41:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kherr_t[m[K' from '[01m[Kssize_t[m[K' may alter its value [-Wconversion]
-                     ret = H5Lget_name_by_idx(group_id, ".", H5_INDEX_CRT_ORDER, H5_ITER_INC, (hsize_t)u, tmpname, (size_t)NAME_BUF_SIZE, H5P_DEFAULT);
-    [01;32m[K                                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:[m[K In function '[01m[Klink_info_by_idx_old[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:11310:37:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kherr_t[m[K' from '[01m[Kssize_t[m[K' may alter its value [-Wconversion]
-                 ret = H5Lget_name_by_idx(group_id, ".", H5_INDEX_CRT_ORDER, H5_ITER_INC, (hsize_t)u, tmpname, (size_t)NAME_BUF_SIZE, H5P_DEFAULT);
-    [01;32m[K                                     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:[m[K In function '[01m[Klink_iterate_check[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:12070:70:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint64_t[m[K' from '[01m[Khsize_t[m[K' may change the sign of the result [-Wsign-conversion]
-         iter_info->curr = order != H5_ITER_DEC ? skip : ((max_links - 1) - skip);
-    [01;32m[K                                                                      ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:12070:5:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint64_t[m[K' from '[01m[Khsize_t[m[K' may change the sign of the result [-Wsign-conversion]
-         iter_info->curr = order != H5_ITER_DEC ? skip : ((max_links - 1) - skip);
-    [01;32m[K     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:12098:45:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Kunsigned int[m[K' may change the sign of the result [-Wsign-conversion]
-         iter_info->nskipped = gskip = max_links / 2;
-    [01;32m[K                                             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:12098:33:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         iter_info->nskipped = gskip = max_links / 2;
-    [01;32m[K                                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:12102:5:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         iter_info->curr = order != H5_ITER_DEC ? (unsigned)gskip : ((max_links - 1) - gskip);
-    [01;32m[K     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:12143:33:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         iter_info->nskipped = gskip = 0;
-    [01;32m[K                                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:[m[K In function '[01m[Klink_iterate_old_check[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:12500:33:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         iter_info->nskipped = gskip = 0;
-    [01;32m[K                                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:12520:70:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint64_t[m[K' from '[01m[Khsize_t[m[K' may change the sign of the result [-Wsign-conversion]
-         iter_info->curr = order != H5_ITER_DEC ? skip : ((max_links - 1) - skip);
-    [01;32m[K                                                                      ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:12520:5:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint64_t[m[K' from '[01m[Khsize_t[m[K' may change the sign of the result [-Wsign-conversion]
-         iter_info->curr = order != H5_ITER_DEC ? skip : ((max_links - 1) - skip);
-    [01;32m[K     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:12548:45:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Kunsigned int[m[K' may change the sign of the result [-Wsign-conversion]
-         iter_info->nskipped = gskip = max_links / 2;
-    [01;32m[K                                             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:12548:33:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         iter_info->nskipped = gskip = max_links / 2;
-    [01;32m[K                                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:12552:5:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         iter_info->curr = order != H5_ITER_DEC ? (unsigned)gskip : ((max_links - 1) - gskip);
-    [01;32m[K     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:12593:33:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         iter_info->nskipped = gskip = 0;
-    [01;32m[K                                 ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:31:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:[m[K At top level:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:35:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir_filename[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir_filename(const char *filename)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:[m[K In function '[01m[Kexternal_set_elink_fapl2[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:3689:1:[m[K [01;35m[Kwarning: [m[Kstack usage is 10672 bytes [-Wstack-usage=]
-     external_set_elink_fapl2(hid_t fapl, hbool_t new_format)
-    [01;32m[K ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:[m[K In function '[01m[Kexternal_set_elink_fapl1[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:3485:1:[m[K [01;35m[Kwarning: [m[Kstack usage is 8944 bytes [-Wstack-usage=]
-     external_set_elink_fapl1(hid_t fapl, hbool_t new_format)
-    [01;32m[K ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:[m[K In function '[01m[Kexternal_symlink[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/links.c:6339:1:[m[K [01;35m[Kwarning: [m[Kstack usage is 11392 bytes [-Wstack-usage=]
-     external_symlink(const char *env_h5_drvr, hid_t fapl, hbool_t new_format)
-    [01;32m[K ^[m[K
       CCLD     links
+      CC       unlink.o
       CCLD     unlink
+      CC       big.o
       CCLD     big
       CC       mtime.o
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/mtime.c:[m[K In function '[01m[Kmain[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/mtime.c:117:50:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' to match other operand of binary expression [-Wdouble-promotion]
-         } else if(HDfabs(HDdifftime(now, oi1.ctime)) > 60.0F) {
-    [01;32m[K                                                  ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/mtime.c:26:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/mtime.c:[m[K At top level:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:35:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir_filename[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir_filename(const char *filename)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
       CCLD     mtime
       CC       fillval.o
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:[m[K In function '[01m[Ktest_create[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:626:19:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-             if( rd_c.a!=0 || rd_c.y != fill_ctype.y || rd_c.x != 0 || rd_c.z != '\0') {
-    [01;32m[K                   ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:626:33:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-             if( rd_c.a!=0 || rd_c.y != fill_ctype.y || rd_c.x != 0 || rd_c.z != '\0') {
-    [01;32m[K                                 ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:630:19:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-                       rd_c.a, rd_c.y, rd_c.x, rd_c.z);
-    [01;32m[K                   ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:699:15:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-         if(rd_c.a != 0 || rd_c.y != fill_ctype.y || rd_c.x != 0 || rd_c.z!='\0') {
-    [01;32m[K               ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:699:30:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-         if(rd_c.a != 0 || rd_c.y != fill_ctype.y || rd_c.x != 0 || rd_c.z!='\0') {
-    [01;32m[K                              ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:703:3:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-       rd_c.a, rd_c.y, rd_c.x, rd_c.z);
-    [01;32m[K   ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:[m[K In function '[01m[Ktest_rdwr_cases[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:792:25:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Khsize_t[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-          hs_offset[j] = rand() % cur_size[j];
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:814:57:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-                 if(fill_time!=H5D_FILL_TIME_NEVER && (rd_c.a!=fill_c.a ||
-    [01;32m[K                                                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:815:29:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-       rd_c.x!=fill_c.x || rd_c.y!=fill_c.y ||
-    [01;32m[K                             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:824:4:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-        fill_c.a, fill_c.x, fill_c.y, fill_c.z);
-    [01;32m[K    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:824:4:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:848:13:[m[K [01;35m[Kwarning: [m[Krequest for implicit conversion from '[01m[Kvoid *[m[K' to '[01m[Kint *[m[K' not permitted in C++ [-Wc++-compat]
-             buf = HDmalloc((size_t)(nelmts * sizeof(int)));
-    [01;32m[K             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:882:31:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-                     if(buf_c[u].a != fill_c.a || buf_c[u].x != fill_c.x ||
-    [01;32m[K                               ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:883:36:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-                             buf_c[u].y != fill_c.y || buf_c[u].z != fill_c.z) {
-    [01;32m[K                                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:892:29:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-                                 fill_c.a, fill_c.x, fill_c.y, fill_c.z);
-    [01;32m[K                             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:892:29:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:941:25:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Khsize_t[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-          hs_offset[j] = rand() % cur_size[j];
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:996:13:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-       if( rd_c.a!=should_be_c.a || rd_c.x!=should_be_c.x ||
-    [01;32m[K             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:997:13:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-           rd_c.y!=should_be_c.y || rd_c.z!=should_be_c.z)  {
-    [01;32m[K             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:1006:14:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-                  should_be_c.x,should_be_c.y,should_be_c.z);
-    [01;32m[K              ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:1006:14:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:1015:27:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-                     if( rd_c.a!=should_be_c.a || rd_c.x!=should_be_c.x ||
-    [01;32m[K                           ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:1016:27:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
-                         rd_c.y!=should_be_c.y || rd_c.z!=should_be_c.z)  {
-    [01;32m[K                           ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:1025:28:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-                                should_be_c.x,should_be_c.y,should_be_c.z);
-    [01;32m[K                            ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:1025:28:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' when passing argument to function [-Wdouble-promotion]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:[m[K In function '[01m[Ktest_extend_cases[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:1443:5:[m[K [01;35m[Kwarning: [m[Kinitialization discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
-         comp_vl_datatype val_rd_c, init_val_c = {87, "baz", "mumble", 129};
-    [01;32m[K     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:1443:5:[m[K [01;35m[Kwarning: [m[Kinitialization discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:1498:25:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Khsize_t[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-          hs_offset[j] = rand() % start_size[j];
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:1551:25:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Khsize_t[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-          hs_offset[j] = rand() % start_size[j];
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:1589:25:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Khsize_t[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-          hs_offset[j] = rand() % extend_size[j];
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:1628:25:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Khsize_t[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-          hs_offset[j] = rand() % max_size[j];
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:1669:25:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Khsize_t[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-          hs_offset[j] = rand() % extend_size[j];
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:1762:25:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Khsize_t[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-          hs_offset[j] = rand() % extend_size[j];
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:[m[K In function '[01m[Ktest_extend[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:1845:5:[m[K [01;35m[Kwarning: [m[Kinitialization discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
-         comp_vl_datatype fillval_c = {32, "foo", "bar", 64};         /* Fill value for compound+vl datatype tests */
-    [01;32m[K     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:1845:5:[m[K [01;35m[Kwarning: [m[Kinitialization discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:23:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:[m[K At top level:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:35:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir_filename[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir_filename(const char *filename)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:[m[K In function '[01m[Ktest_rdwr_cases[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:886:30:[m[K [01;35m[Kwarning: [m[K'[01m[Kfill_c.a[m[K' may be used uninitialized in this function [-Wmaybe-uninitialized]
-                         HDfprintf(stdout,"    Elmt={%Hu, %Hu, %Hu, %Hu, %Hu}, read: %f, %d, %f, %c"
-    [01;32m[K                              ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:886:30:[m[K [01;35m[Kwarning: [m[K'[01m[Kfill_c.x[m[K' may be used uninitialized in this function [-Wmaybe-uninitialized]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:886:30:[m[K [01;35m[Kwarning: [m[K'[01m[Kfill_c.y[m[K' may be used uninitialized in this function [-Wmaybe-uninitialized]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/fillval.c:886:30:[m[K [01;35m[Kwarning: [m[K'[01m[Kfill_c.z[m[K' may be used uninitialized in this function [-Wmaybe-uninitialized]
       CCLD     fillval
+      CC       mount.o
       CCLD     mount
+      CC       flush1.o
       CCLD     flush1
+      CC       flush2.o
       CCLD     flush2
+      CC       app_ref.o
       CCLD     app_ref
+      CC       enum.o
       CCLD     enum
+      CC       set_extent.o
       CCLD     set_extent
+      CC       ttsafe.o
+      CC       ttsafe_dcreate.o
+      CC       ttsafe_error.o
+      CC       ttsafe_cancel.o
+      CC       ttsafe_acreate.o
       CCLD     ttsafe
+      CC       getname.o
       CCLD     getname
+      CC       vfd.o
       CCLD     vfd
+      CC       ntypes.o
       CCLD     ntypes
+      CC       dangle.o
       CCLD     dangle
+      CC       dtransform.o
       CCLD     dtransform
+      CC       reserved.o
       CCLD     reserved
       CC       cross_read.o
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:24:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:[m[K In function '[01m[Kcheck_data[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.h:135:47:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' to match other operand of binary expression [-Wdouble-promotion]
-     #define DBL_REL_EQUAL(X,Y,M)    (fabs((Y-X)/X)<M)
-    [01;32m[K                                               ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:129:8:[m[K [01;36m[Knote: [m[Kin expansion of macro '[01m[KDBL_REL_EQUAL[m[K'
-       if (!DBL_REL_EQUAL(data_out[j][i], data_in[j][i], 0.001F)) {
-    [01;32m[K        ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:[m[K In function '[01m[Kopen_dataset[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:210:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME, file, TRUE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:213:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME1, file, TRUE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:216:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME2, file, TRUE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:219:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME3, file, TRUE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:222:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME4, file, TRUE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:225:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME5, file, TRUE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:228:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME6, file, FALSE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:231:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME7, file, FALSE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:234:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME8, file, FALSE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:237:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME9, file, FALSE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:240:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME10, file, FALSE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:243:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME11, file, FALSE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:246:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME12, file, FALSE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:249:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME13, file, FALSE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:252:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME14, file, TRUE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:255:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME15, file, TRUE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:259:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME16, file, TRUE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:267:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME17, file, TRUE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:290:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME20, file, TRUE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:293:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME21, file, TRUE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:296:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME22, file, TRUE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:299:26:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += check_data(DATASETNAME23, file, TRUE);
-    [01;32m[K                          ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:309:5:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Kunsigned int[m[K' may change the sign of the result [-Wsign-conversion]
-         return nerrors;
-    [01;32m[K     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:[m[K In function '[01m[Kmain[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:335:28:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += open_dataset(filename);
-    [01;32m[K                            ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:339:28:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kunsigned int[m[K' from '[01m[Kint[m[K' may change the sign of the result [-Wsign-conversion]
-         nerrors += open_dataset(filename);
-    [01;32m[K                            ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:25:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/cross_read.c:[m[K At top level:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
       CCLD     cross_read
+      CC       freespace.o
       CCLD     freespace
+      CC       mf.o
       CCLD     mf
+      CC       btree2.o
       CCLD     btree2
+      CC       fheap.o
       CCLD     fheap
       CC       file_image.o
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/file_image.c:[m[K In function '[01m[Ktest_get_file_image[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/file_image.c:768:13:[m[K [01;35m[Kwarning: [m[Kformat not a string literal, argument types not checked [-Wformat-nonliteral]
-                 HDsnprintf(member_file_name, 1024, file_name, i);
-    [01;32m[K             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/file_image.c:768:13:[m[K [01;35m[Kwarning: [m[Kformat not a string literal, argument types not checked [-Wformat-nonliteral]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/file_image.c:796:13:[m[K [01;35m[Kwarning: [m[Kformat not a string literal, argument types not checked [-Wformat-nonliteral]
-                 HDsnprintf(member_file_name, 1024, file_name, i);
-    [01;32m[K             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/file_image.c:796:13:[m[K [01;35m[Kwarning: [m[Kformat not a string literal, argument types not checked [-Wformat-nonliteral]
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/file_image.c:25:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/file_image.c:[m[K At top level:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:35:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir_filename[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir_filename(const char *filename)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
       CCLD     file_image
+      CC       unregister.o
       CCLD     unregister
       CC       error_test.o
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/error_test.c:43:5:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Kipoints2[m[K' is 80000 bytes [-Wlarger-than=]
-     int ipoints2[DIM0][DIM1], icheck2[DIM0][DIM1];
-    [01;32m[K     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/error_test.c:43:27:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Kicheck2[m[K' is 80000 bytes [-Wlarger-than=]
-     int ipoints2[DIM0][DIM1], icheck2[DIM0][DIM1];
-    [01;32m[K                           ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/error_test.c:[m[K In function '[01m[Kerror_stack[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/error_test.c:276:29:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Kssize_t[m[K' may alter its value [-Wconversion]
-         if((err_num = H5Eget_num(H5E_DEFAULT)) < 0)
-    [01;32m[K                             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/error_test.c:285:29:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Kssize_t[m[K' may alter its value [-Wconversion]
-         if((err_num = H5Eget_num(ERR_STACK)) == 0) {
-    [01;32m[K                             ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/error_test.c:[m[K In function '[01m[Ktest_long_desc[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/error_test.c:357:28:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kchar[m[K' from '[01m[Ksize_t[m[K' may alter its value [-Wconversion]
-             long_desc[u] = 'A' + (u % 26);
-    [01;32m[K                            ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/error_test.c:368:5:[m[K [01;35m[Kwarning: [m[Kformat not a string literal, argument types not checked [-Wformat-nonliteral]
-         HDsnprintf(full_desc, (size_t)(LONG_DESC_SIZE + 128), format, long_desc);
-    [01;32m[K     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/error_test.c:368:5:[m[K [01;35m[Kwarning: [m[Kformat not a string literal, argument types not checked [-Wformat-nonliteral]
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/error_test.c:[m[K In function '[01m[Ktest_create[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/error_test.c:497:25:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Kssize_t[m[K' may alter its value [-Wconversion]
-         err_num = H5Eget_num(estack_id);
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/error_test.c:504:25:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Kssize_t[m[K' may alter its value [-Wconversion]
-         err_num = H5Eget_num(estack_id);
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/error_test.c:511:25:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Kssize_t[m[K' may alter its value [-Wconversion]
-         err_num = H5Eget_num(estack_id);
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/error_test.c:[m[K In function '[01m[Ktest_copy[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/error_test.c:549:25:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Kssize_t[m[K' may alter its value [-Wconversion]
-         err_num = H5Eget_num(H5E_DEFAULT);
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/error_test.c:556:25:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Kssize_t[m[K' may alter its value [-Wconversion]
-         err_num = H5Eget_num(estack_id);
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/error_test.c:560:25:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Kssize_t[m[K' may alter its value [-Wconversion]
-         err_num = H5Eget_num(H5E_DEFAULT);
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/error_test.c:567:25:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Kint[m[K' from '[01m[Kssize_t[m[K' may alter its value [-Wconversion]
-         err_num = H5Eget_num(H5E_DEFAULT);
-    [01;32m[K                         ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/error_test.c:23:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/error_test.c:[m[K At top level:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
       CCLD     error_test
+      CC       err_compat.o
       CCLD     err_compat
+      CC       tcheck_version.o
       CCLD     tcheck_version
+      CC       testmeta.o
       CCLD     testmeta
+      CC       links_env.o
       CCLD     links_env
       CC       plugin.o
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:65:5:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Kpoints_deflate[m[K' is 80000 bytes [-Wlarger-than=]
-     int points_deflate[DSET_DIM1][DSET_DIM2], 
-    [01;32m[K     ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:66:9:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Kpoints_dynlib1[m[K' is 80000 bytes [-Wlarger-than=]
-             points_dynlib1[DSET_DIM1][DSET_DIM2],
-    [01;32m[K         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:67:9:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Kpoints_dynlib2[m[K' is 80000 bytes [-Wlarger-than=]
-             points_dynlib2[DSET_DIM1][DSET_DIM2],
-    [01;32m[K         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:68:9:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Kpoints_bzip2[m[K' is 80000 bytes [-Wlarger-than=]
-             points_bzip2[DSET_DIM1][DSET_DIM2];
-    [01;32m[K         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:[m[K In function '[01m[Ktest_filter_internal[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:95:25:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Kpoints[m[K' is 80000 bytes [-Wlarger-than=]
-         int                 points[DSET_DIM1][DSET_DIM2], check[DSET_DIM1][DSET_DIM2];
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:95:55:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Kcheck[m[K' is 80000 bytes [-Wlarger-than=]
-         int                 points[DSET_DIM1][DSET_DIM2], check[DSET_DIM1][DSET_DIM2];
-    [01;32m[K                                                       ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:[m[K In function '[01m[Ktest_read_data[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:427:25:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Kcheck[m[K' is 80000 bytes [-Wlarger-than=]
-         int                 check[DSET_DIM1][DSET_DIM2];
-    [01;32m[K                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:[m[K In function '[01m[Ktest_noread_data[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:541:16:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Kcheck[m[K' is 80000 bytes [-Wlarger-than=]
-         int        check[DSET_DIM1][DSET_DIM2];
-    [01;32m[K                ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:[m[K In function '[01m[Ktest_noread_with_filters[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:577:5:[m[K [01;35m[Kwarning: [m[Knegative integer implicitly converted to unsigned type [-Wsign-conversion]
-         plugin_state = plugin_state & ~H5PL_FILTER_PLUGIN;
-    [01;32m[K     ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:24:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:[m[K At top level:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:35:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir_filename[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir_filename(const char *filename)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:[m[K In function '[01m[Ktest_read_data[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:425:1:[m[K [01;35m[Kwarning: [m[Kstack usage is 80032 bytes [-Wstack-usage=]
-     test_read_data(hid_t dataset, int *origin_data)
-    [01;32m[K ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:456:1:[m[K [01;35m[Kwarning: [m[Kthe frame size of 80000 bytes is larger than 16384 bytes [-Wframe-larger-than=]
-     }
-    [01;32m[K ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:[m[K In function '[01m[Ktest_filter_internal[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:85:1:[m[K [01;35m[Kwarning: [m[Kstack usage is 160208 bytes [-Wstack-usage=]
-     test_filter_internal(hid_t fid, const char *name, hid_t dcpl)
-    [01;32m[K ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:325:1:[m[K [01;35m[Kwarning: [m[Kthe frame size of 160128 bytes is larger than 16384 bytes [-Wframe-larger-than=]
-     }
-    [01;32m[K ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:[m[K In function '[01m[Ktest_noread_data[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:539:1:[m[K [01;35m[Kwarning: [m[Kstack usage is 80064 bytes [-Wstack-usage=]
-     test_noread_data(hid_t dataset)
-    [01;32m[K ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/plugin.c:556:1:[m[K [01;35m[Kwarning: [m[Kthe frame size of 80048 bytes is larger than 16384 bytes [-Wframe-larger-than=]
-     }
-    [01;32m[K ^[m[K
       CCLD     plugin
     make[1]: Leaving directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/test'
     Making all in tools
     make[1]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools'
     Making all in lib
     make[2]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/lib'
-    make[2]: Nothing to be done for `all'.
+      CC       h5tools.lo
+      CC       h5tools_dump.lo
+      CC       h5tools_str.lo
+      CC       h5tools_utils.lo
+      CC       h5diff.lo
+      CC       h5diff_array.lo
+      CC       h5diff_attr.lo
+      CC       h5diff_dset.lo
+      CC       h5diff_util.lo
+      CC       h5trav.lo
+      CC       h5tools_filters.lo
+      CC       h5tools_ref.lo
+      CC       h5tools_type.lo
+      CC       io_timer.lo
+      CCLD     libh5tools.la
     make[2]: Leaving directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/lib'
     Making all in h5diff
     make[2]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/h5diff'
+      CC       h5diff_main.o
+      CC       h5diff_common.o
       CCLD     h5diff
+      CC       h5diffgentest.o
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/tools/h5diff/h5diffgentest.c:[m[K In function '[01m[Ktest_comp_vlen_strings[m[K':
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/tools/h5diff/h5diffgentest.c:3702:52:[m[K [01;35m[Kwarning: [m[Kassignment discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         comp1_buf.str_vlen = comp1_buf.str_vlen_repeat = vlen_str_buf;
+    [01;32m[K                                                    ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/tools/h5diff/h5diffgentest.c:3703:52:[m[K [01;35m[Kwarning: [m[Kassignment discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         comp2_buf.str_vlen = comp2_buf.str_vlen_repeat = vlen_str_buf;
+    [01;32m[K                                                    ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/tools/h5diff/h5diffgentest.c:3704:52:[m[K [01;35m[Kwarning: [m[Kassignment discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         comp3_buf.str_vlen = comp3_buf.str_vlen_repeat = vlen_str_buf;
+    [01;32m[K                                                    ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/tools/h5diff/h5diffgentest.c:3705:52:[m[K [01;35m[Kwarning: [m[Kassignment discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         comp4_buf.str_vlen = comp4_buf.str_vlen_repeat = vlen_str_buf;
+    [01;32m[K                                                    ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/tools/h5diff/h5diffgentest.c:3706:52:[m[K [01;35m[Kwarning: [m[Kassignment discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         comp5_buf.str_vlen = comp5_buf.str_vlen_repeat = vlen_str_buf;
+    [01;32m[K                                                    ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/tools/h5diff/h5diffgentest.c:3707:52:[m[K [01;35m[Kwarning: [m[Kassignment discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         comp6_buf.str_vlen = comp6_buf.str_vlen_repeat = vlen_str_buf;
+    [01;32m[K                                                    ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/tools/h5diff/h5diffgentest.c:3708:52:[m[K [01;35m[Kwarning: [m[Kassignment discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         comp7_buf.str_vlen = comp7_buf.str_vlen_repeat = vlen_str_buf;
+    [01;32m[K                                                    ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/tools/h5diff/h5diffgentest.c:3709:52:[m[K [01;35m[Kwarning: [m[Kassignment discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         comp8_buf.str_vlen = comp8_buf.str_vlen_repeat = vlen_str_buf;
+    [01;32m[K                                                    ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/tools/h5diff/h5diffgentest.c:3710:52:[m[K [01;35m[Kwarning: [m[Kassignment discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+         comp9_buf.str_vlen = comp9_buf.str_vlen_repeat = vlen_str_buf;
+    [01;32m[K                                                    ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/tools/h5diff/h5diffgentest.c:3746:73:[m[K [01;35m[Kwarning: [m[Kassignment discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+             comp1_buf.str_array_vlen[i] = comp1_buf.str_vlen_array_again[i] = vlen_str_array_buf[i];
+    [01;32m[K                                                                         ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/tools/h5diff/h5diffgentest.c:3747:73:[m[K [01;35m[Kwarning: [m[Kassignment discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+             comp2_buf.str_array_vlen[i] = comp2_buf.str_vlen_array_again[i] = vlen_str_array_buf[i];
+    [01;32m[K                                                                         ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/tools/h5diff/h5diffgentest.c:3748:73:[m[K [01;35m[Kwarning: [m[Kassignment discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+             comp3_buf.str_array_vlen[i] = comp3_buf.str_vlen_array_again[i] = vlen_str_array_buf[i];
+    [01;32m[K                                                                         ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/tools/h5diff/h5diffgentest.c:3749:73:[m[K [01;35m[Kwarning: [m[Kassignment discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+             comp4_buf.str_array_vlen[i] = comp4_buf.str_vlen_array_again[i] = vlen_str_array_buf[i];
+    [01;32m[K                                                                         ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/tools/h5diff/h5diffgentest.c:3750:73:[m[K [01;35m[Kwarning: [m[Kassignment discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+             comp5_buf.str_array_vlen[i] = comp5_buf.str_vlen_array_again[i] = vlen_str_array_buf[i];
+    [01;32m[K                                                                         ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/tools/h5diff/h5diffgentest.c:3751:73:[m[K [01;35m[Kwarning: [m[Kassignment discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+             comp6_buf.str_array_vlen[i] = comp6_buf.str_vlen_array_again[i] = vlen_str_array_buf[i];
+    [01;32m[K                                                                         ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/tools/h5diff/h5diffgentest.c:3752:73:[m[K [01;35m[Kwarning: [m[Kassignment discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+             comp7_buf.str_array_vlen[i] = comp7_buf.str_vlen_array_again[i] = vlen_str_array_buf[i];
+    [01;32m[K                                                                         ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/tools/h5diff/h5diffgentest.c:3753:73:[m[K [01;35m[Kwarning: [m[Kassignment discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+             comp8_buf.str_array_vlen[i] = comp8_buf.str_vlen_array_again[i] = vlen_str_array_buf[i];
+    [01;32m[K                                                                         ^[m[K
+    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/tools/h5diff/h5diffgentest.c:3754:73:[m[K [01;35m[Kwarning: [m[Kassignment discards '[01m[Kconst[m[K' qualifier from pointer target type [enabled by default]
+             comp9_buf.str_array_vlen[i] = comp9_buf.str_vlen_array_again[i] = vlen_str_array_buf[i];
+    [01;32m[K                                                                         ^[m[K
       CCLD     h5diffgentest
     make[2]: Leaving directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/h5diff'
     Making all in h5ls
     make[2]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/h5ls'
+      CC       h5ls.o
       CCLD     h5ls
     make[2]: Leaving directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/h5ls'
     Making all in h5dump
     make[2]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/h5dump'
+      CC       h5dump.o
+      CC       h5dump_ddl.o
+      CC       h5dump_xml.o
       CCLD     h5dump
+      CC       h5dumpgentest.o
       CCLD     h5dumpgentest
+      CC       binread.o
       CCLD     binread
     make[2]: Leaving directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/h5dump'
     Making all in misc
     make[2]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/misc'
+      CC       h5debug.o
       CCLD     h5debug
+      CC       h5repart.o
       CCLD     h5repart
+      CC       h5mkgrp.o
       CCLD     h5mkgrp
+      CC       h5repart_gentest.o
       CCLD     h5repart_gentest
+      CC       talign.o
       CCLD     talign
+      CC       repart_test.o
       CCLD     repart_test
     make[2]: Leaving directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/misc'
     Making all in h5import
     make[2]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/h5import'
+      CC       h5import.o
       CCLD     h5import
+      CC       h5importtest.o
       CCLD     h5importtest
     make[2]: Leaving directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/h5import'
     Making all in h5repack
     make[2]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/h5repack'
+      CC       dynlib_rpk.lo
+      CCLD     libdynlibadd.la
+      CC       h5repack.o
+      CC       h5repack_copy.o
+      CC       h5repack_filters.o
+      CC       h5repack_opttable.o
+      CC       h5repack_parse.o
+      CC       h5repack_refs.o
+      CC       h5repack_verify.o
+      CC       h5repack_main.o
       CCLD     h5repack
+      CC       testh5repack_detect_szip.o
       CCLD     testh5repack_detect_szip
+      CC       h5repacktst.o
       CCLD     h5repacktst
     make[2]: Leaving directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/h5repack'
     Making all in h5jam
     make[2]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/h5jam'
+      CC       h5jam.o
       CCLD     h5jam
+      CC       h5unjam.o
       CCLD     h5unjam
+      CC       tellub.o
       CCLD     tellub
+      CC       h5jamgentest.o
       CCLD     h5jamgentest
+      CC       getub.o
       CCLD     getub
     make[2]: Leaving directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/h5jam'
     Making all in h5copy
     make[2]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/h5copy'
+      CC       h5copy.o
       CCLD     h5copy
+      CC       h5copygentest.o
       CCLD     h5copygentest
     make[2]: Leaving directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/h5copy'
     Making all in h5stat
     make[2]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/h5stat'
+      CC       h5stat.o
       CCLD     h5stat
+      CC       h5stat_gentest.o
       CCLD     h5stat_gentest
     make[2]: Leaving directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/h5stat'
     Making all in perform
     make[2]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/perform'
+      CC       sio_perf.o
+      CC       sio_engine.o
       CCLD     h5perf_serial
+      CC       iopipe.o
       CCLD     iopipe
+      CC       chunk.o
       CCLD     chunk
+      CC       overhead.o
       CCLD     overhead
+      CC       zip_perf.o
       CCLD     zip_perf
+      CC       perf_meta.o
       CCLD     perf_meta
+      CC       perf.o
       CCLD     perf
     make[2]: Leaving directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools/perform'
     make[2]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/tools'
@@ -1944,120 +1528,48 @@ print hdf5SrcDir
     make[1]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/hl'
     Making all in src
     make[2]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/hl/src'
+      CC       H5DO.lo
+      CC       H5DS.lo
+      CC       H5IM.lo
+      CC       H5LT.lo
+      CC       H5LTanalyze.lo
+      CC       H5LTparse.lo
+      CC       H5PT.lo
+      CC       H5TB.lo
       CCLD     libhdf5_hl.la
     make[2]: Leaving directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/hl/src'
     Making all in test
     make[2]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/hl/test'
       CC       test_lite.o
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_lite.c:19:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:35:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir_filename[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir_filename(const char *filename)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_lite.c:[m[K In function '[01m[Kmain[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_lite.c:1313:7:[m[K [01;35m[Kwarning: [m[K'[01m[Kdt_str[m[K' may be used uninitialized in this function [-Wmaybe-uninitialized]
-         if(dt_str)
-    [01;32m[K       ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_lite.c:1199:13:[m[K [01;36m[Knote: [m[K'[01m[Kdt_str[m[K' was declared here
-         char*   dt_str;
-    [01;32m[K             ^[m[K
       CCLD     test_lite
       CC       test_image.o
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_image.c:21:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_image.c:[m[K In function '[01m[Ktest_generate[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_image.c:754:7:[m[K [01;35m[Kwarning: [m[K'[01m[Kdata[m[K' may be used uninitialized in this function [-Wmaybe-uninitialized]
-         if(data)
-    [01;32m[K       ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_image.c:[m[K In function '[01m[Kread_data[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_image.c:844:5:[m[K [01;35m[Kwarning: [m[Kassuming signed overflow does not occur when simplifying conditional to constant [-Wstrict-overflow]
-         for(i = 0; i < n_elements; i++) {
-    [01;32m[K     ^[m[K
       CCLD     test_image
+      CC       test_file_image.o
       CCLD     test_file_image
       CC       test_table.o
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_table.c:19:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:35:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir_filename[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir_filename(const char *filename)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
       CCLD     test_table
       CC       test_ds.o
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_ds.c:[m[K In function '[01m[Kcreate_long_dataset[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_ds.c:392:13:[m[K [01;35m[Kwarning: [m[Ksize of '[01m[Kbuf[m[K' is 2304 bytes [-Wlarger-than=]
-         long    buf[DIM1_SIZE*DIM2_SIZE*DIM3_SIZE*DIM4_SIZE];
-    [01;32m[K             ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/h5test.h:26:0[m[K,
-                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/h5hltest.h:27[m[K,
-                     from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_ds.c:18[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_ds.c:[m[K In function '[01m[Ktest_cmp_scalename[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_ds.c:1108:46:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Klong unsigned int[m[K' from '[01m[Kssize_t[m[K' may change the sign of the result [-Wsign-conversion]
-              name_out = (char*)HDmalloc((name_len+1) * sizeof (char));
-    [01;32m[K                                              ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5private.h:980:35:[m[K [01;36m[Knote: [m[Kin definition of macro '[01m[KHDmalloc[m[K'
-         #define HDmalloc(Z)    malloc(Z)
-    [01;32m[K                                   ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_ds.c:[m[K In function '[01m[Ktest_simple[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_ds.c:3129:41:[m[K [01;35m[Kwarning: [m[Kconversion to '[01m[Klong unsigned int[m[K' from '[01m[Kssize_t[m[K' may change the sign of the result [-Wsign-conversion]
-         name_out = (char*)HDmalloc((name_len+1) * sizeof (char));
-    [01;32m[K                                         ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/src/H5private.h:980:35:[m[K [01;36m[Knote: [m[Kin definition of macro '[01m[KHDmalloc[m[K'
-         #define HDmalloc(Z)    malloc(Z)
-    [01;32m[K                                   ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_ds.c:19:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_ds.c:[m[K At top level:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:35:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir_filename[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir_filename(const char *filename)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
       CCLD     test_ds
+      CC       test_packet.o
+      CC       test_packet_vlen.o
       CCLD     test_packet
       CC       test_dset_opt.o
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_dset_opt.c:[m[K In function '[01m[Ktest_direct_chunk_write[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_dset_opt.c:44:51:[m[K [01;35m[Kwarning: [m[Kimplicit conversion from '[01m[Kfloat[m[K' to '[01m[Kdouble[m[K' to match other operand of binary expression [-Wdouble-promotion]
-     #define DEFLATE_SIZE_ADJUST(s) (ceil(((double)(s))*1.001F)+12)
-    [01;32m[K                                                   ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_dset_opt.c:116:40:[m[K [01;36m[Knote: [m[Kin expansion of macro '[01m[KDEFLATE_SIZE_ADJUST[m[K'
-         uLongf      z_dst_nbytes = (uLongf)DEFLATE_SIZE_ADJUST(buf_size);
-    [01;32m[K                                        ^[m[K
-    In file included from [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_dset_opt.c:19:0[m[K:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_dset_opt.c:[m[K At top level:
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:35:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir_filename[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir_filename(const char *filename)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/test/H5srcdir.h:53:20:[m[K [01;35m[Kwarning: [m[K'[01m[KH5_get_srcdir[m[K' defined but not used [-Wunused-function]
-     static const char *H5_get_srcdir(void)
-    [01;32m[K                    ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_dset_opt.c:[m[K In function '[01m[Kfilter_bogus1[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_dset_opt.c:508:14:[m[K [01;35m[Kwarning: [m[Kassuming signed overflow does not occur when changing X +- C1 cmp C2 to X cmp C1 +- C2 [-Wstrict-overflow]
-             while(buf_left>0) {
-    [01;32m[K              ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_dset_opt.c:515:14:[m[K [01;35m[Kwarning: [m[Kassuming signed overflow does not occur when changing X +- C1 cmp C2 to X cmp C1 +- C2 [-Wstrict-overflow]
-             while(buf_left>0) {
-    [01;32m[K              ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_dset_opt.c:[m[K In function '[01m[Kfilter_bogus2[m[K':
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_dset_opt.c:545:14:[m[K [01;35m[Kwarning: [m[Kassuming signed overflow does not occur when changing X +- C1 cmp C2 to X cmp C1 +- C2 [-Wstrict-overflow]
-             while(buf_left>0) {
-    [01;32m[K              ^[m[K
-    [01m[K/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5-1.8.17/hl/test/test_dset_opt.c:552:14:[m[K [01;35m[Kwarning: [m[Kassuming signed overflow does not occur when changing X +- C1 cmp C2 to X cmp C1 +- C2 [-Wstrict-overflow]
-             while(buf_left>0) {
-    [01;32m[K              ^[m[K
       CCLD     test_dset_opt
     make[2]: Leaving directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/hl/test'
     Making all in tools
     make[2]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/hl/tools'
     Making all in gif2h5
     make[3]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/hl/tools/gif2h5'
+      CC       gif2hdf.o
+      CC       gif2mem.o
+      CC       decompress.o
+      CC       gifread.o
+      CC       writehdf.o
       CCLD     gif2h5
+      CC       hdf2gif.o
+      CC       hdfgifwr.o
       CCLD     h52gif
+      CC       h52gifgentst.o
       CCLD     h52gifgentst
     make[3]: Leaving directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/hl/tools/gif2h5'
     make[3]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/hl/tools'
@@ -2133,7 +1645,25 @@ print hdf5SrcDir
     libtool: install: /bin/install -c .libs/libdynlib3.a /gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/lib/libdynlib3.a
     libtool: install: chmod 644 /gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/lib/libdynlib3.a
     libtool: install: ranlib /gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/lib/libdynlib3.a
-    libtool: install: warning: remember to run `libtool --finish /gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/lib'
+    libtool: finish: PATH="/usr/local/src/bluemix_jupyter_bundle/notebook/bin:/usr/local/src/bluemix_jupyter_bundle/notebook/system/bin:/usr/local/src/bluemix_jupyter_bundle/notebook/freetype/bin:/usr/local/src/bluemix_jupyter_bundle/notebook/bin:/usr/local/src/bluemix_jupyter_bundle/notebook/system/bin:/usr/local/src/bluemix_jupyter_bundle/notebook/freetype/bin:/bin:/sbin" ldconfig -n /gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/lib
+    ----------------------------------------------------------------------
+    Libraries have been installed in:
+       /gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/lib
+    
+    If you ever happen to want to link against installed libraries
+    in a given directory, LIBDIR, you must either use libtool, and
+    specify the full pathname of the library, or use the `-LLIBDIR'
+    flag during linking and do at least one of the following:
+       - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+         during execution
+       - add LIBDIR to the `LD_RUN_PATH' environment variable
+         during linking
+       - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+       - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+    
+    See any operating system documentation about shared libraries for
+    more information, such as the ld(1) and ld.so(8) manual pages.
+    ----------------------------------------------------------------------
     make  install-exec-hook
     make[3]: Entering directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/test'
     rm -f /gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/lib/*dynlib*
@@ -2211,7 +1741,25 @@ print hdf5SrcDir
     libtool: install: /bin/install -c .libs/libdynlibadd.a /gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/lib/libdynlibadd.a
     libtool: install: chmod 644 /gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/lib/libdynlibadd.a
     libtool: install: ranlib /gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/lib/libdynlibadd.a
-    libtool: install: warning: remember to run `libtool --finish /gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/lib'
+    libtool: finish: PATH="/usr/local/src/bluemix_jupyter_bundle/notebook/bin:/usr/local/src/bluemix_jupyter_bundle/notebook/system/bin:/usr/local/src/bluemix_jupyter_bundle/notebook/freetype/bin:/usr/local/src/bluemix_jupyter_bundle/notebook/bin:/usr/local/src/bluemix_jupyter_bundle/notebook/system/bin:/usr/local/src/bluemix_jupyter_bundle/notebook/freetype/bin:/bin:/sbin" ldconfig -n /gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/lib
+    ----------------------------------------------------------------------
+    Libraries have been installed in:
+       /gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/lib
+    
+    If you ever happen to want to link against installed libraries
+    in a given directory, LIBDIR, you must either use libtool, and
+    specify the full pathname of the library, or use the `-LLIBDIR'
+    flag during linking and do at least one of the following:
+       - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+         during execution
+       - add LIBDIR to the `LD_RUN_PATH' environment variable
+         during linking
+       - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+       - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+    
+    See any operating system documentation about shared libraries for
+    more information, such as the ld(1) and ld.so(8) manual pages.
+    ----------------------------------------------------------------------
      /bin/mkdir -p '/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/bin'
       /bin/sh ../../libtool   --mode=install /bin/install -c h5repack '/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/bin'
     libtool: install: /bin/install -c .libs/h5repack /gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/bin/h5repack
@@ -2281,7 +1829,7 @@ print hdf5SrcDir
      /bin/mkdir -p '/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/lib'
      /bin/sh ../../libtool   --mode=install /bin/install -c   libhdf5_hl.la '/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/lib'
     libtool: install: warning: relinking `libhdf5_hl.la'
-    libtool: install: (cd /gpfs/fs01/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/hl/src; /bin/sh /gpfs/fs01/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/libtool  --silent --tag CC --mode=relink gcc -std=c99 -pedantic -Wall -Wextra -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wnested-externs -Winline -Wfloat-equal -Wmissing-format-attribute -Wmissing-noreturn -Wpacked -Wdisabled-optimization -Wformat=2 -Wunreachable-code -Wendif-labels -Wdeclaration-after-statement -Wold-style-definition -Winvalid-pch -Wvariadic-macros -Winit-self -Wmissing-include-dirs -Wswitch-default -Wswitch-enum -Wunused-macros -Wunsafe-loop-optimizations -Wc++-compat -Wstrict-overflow -Wlogical-op -Wlarger-than=2048 -Wvla -Wsync-nand -Wframe-larger-than=16384 -Wpacked-bitfield-compat -Wstrict-overflow=5 -Wjump-misses-init -Wdouble-promotion -Wsuggest-attribute=const -Wtrampolines -Wstack-usage=8192 -Wvector-operation-performance -Wsuggest-attribute=pure -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -O3 -version-info 11:0:1 -o libhdf5_hl.la -rpath /gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/lib H5DO.lo H5DS.lo H5IM.lo H5LT.lo H5LTanalyze.lo H5LTparse.lo H5PT.lo H5TB.lo ../../src/libhdf5.la -lz -ldl -lm )
+    libtool: install: (cd /gpfs/fs01/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/hl/src; /bin/sh /gpfs/fs01/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work/libtool  --silent --tag CC --mode=relink gcc -std=c99 -version-info 11:0:1 -o libhdf5_hl.la -rpath /gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/lib H5DO.lo H5DS.lo H5IM.lo H5LT.lo H5LTanalyze.lo H5LTparse.lo H5PT.lo H5TB.lo ../../src/libhdf5.la -lz -ldl -lm )
     libtool: install: /bin/install -c .libs/libhdf5_hl.so.10.1.0T /gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/lib/libhdf5_hl.so.10.1.0
     libtool: install: (cd /gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/lib && { ln -s -f libhdf5_hl.so.10.1.0 libhdf5_hl.so.10 || { rm -f libhdf5_hl.so.10 && ln -s libhdf5_hl.so.10.1.0 libhdf5_hl.so.10; }; })
     libtool: install: (cd /gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/.local/share/notebook_hdf5/hdf5/lib && { ln -s -f libhdf5_hl.so.10.1.0 libhdf5_hl.so || { rm -f libhdf5_hl.so && ln -s libhdf5_hl.so.10.1.0 libhdf5_hl.so; }; })
@@ -2414,6 +1962,18 @@ print hdf5SrcDir
     make: Leaving directory `/gpfs/global_fs01/sym_shared/YPProdSpark/user/s1a2-472d95bcebf7db-bf066087ecf5/notebook/work'
 
 
+## Housekeeping
+
+
+```python
+# Remove all of configure generated by-products
+!rm -rf *
+# Remove the extracted source folder
+!rm -rf $hdf5Dir/hdf5-1.8.17
+# Remove the tar gzip file
+!rm $hdf5Dir/hdf5-1.8.17.tar.gz
+```
+
 
 ```python
 os.environ['HDF5_DIR']= hdf5Dir + "/hdf5"
@@ -2425,7 +1985,7 @@ os.environ['HDF5_DIR']= hdf5Dir + "/hdf5"
     Requirement already satisfied (use --upgrade to upgrade): numpy>=1.6.1 in /usr/local/src/bluemix_jupyter_bundle.v3/notebook/lib/python2.7/site-packages (from h5py)
     Requirement already satisfied (use --upgrade to upgrade): six in /usr/local/src/bluemix_jupyter_bundle.v3/notebook/lib/python2.7/site-packages (from h5py)
     Installing collected packages: h5py
-      Running setup.py install for h5py ... [?25l- \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ done
+      Running setup.py install for h5py ... [?25l- \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | done
     [?25hSuccessfully installed h5py-2.6.0
 
 
@@ -2436,7 +1996,7 @@ os.environ['HDF5_DIR']= hdf5Dir + "/hdf5"
 ```python
 import h5py
 import numpy as np
-f = h5py.File("mytestfile2.hdf5", "w")
+f = h5py.File("mytestfile1.hdf5", "w")
 ```
 
 
